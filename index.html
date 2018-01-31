@@ -45,11 +45,11 @@
 									<div class="col-md-12">
 										Login via
 										<div class="social-buttons">
-											<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-											<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+											<button id="loginBtn" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</button>
+											<button %href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</button>
 										</div>
 																		or
-										 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										 <form class="form" role="form" method="post" %action="login"% accept-charset="UTF-8" id="login-nav">
 												<div class="form-group">
 													 <label class="sr-only" for="exampleInputEmail2">Email address</label>
 													 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
@@ -60,13 +60,14 @@
 																								 <div class="help-block text-right"><a href="">Forget the password ?</a></div>
 												</div>
 												<div class="form-group">
-													 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+													 <button type="submit" class="btn btn-primary btn-block" function="login()">Sign in</button>
 												</div>
 												<div class="checkbox">
 													 <label>
 													 <input type="checkbox"> keep me logged-in
 													 </label>
 												</div>
+					
 										 </form>
 									</div>
 									<div class="bottom text-center">
@@ -98,7 +99,59 @@
 
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1888602084785022',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.12'
+    });
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+	});  
+    FB.AppEvents.logPageView();   
+      
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 
+   function statusChangeCallback(response){
+   	if(response.status === 'connected'){
+   		console.log('Logged in and authenticated');
+   	}
+   	else{
+   		console.log('Not authenticated');
+   	}
+   }
+
+	function checkLoginState() {
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+	}
+
+	function logout(){
+		FB.logout(function(response){
+			
+		});
+	}
+
+	document.getElementById('loginBtn').addEventListener('click', function() {
+    //do the login
+    FB.login(function(response) {
+        if (response.authResponse) {
+            //user just authorized your app
+            top.location.href = 'example.com/facebook_connect.php';
+        }
+    }, {scope: 'email,public_profile', return_scopes: true});
+}, false);
+</script>
 </body>
 </html>

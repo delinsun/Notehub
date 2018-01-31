@@ -49,9 +49,9 @@ hr {
     padding:14px;
 }
 #login-dp .social-buttons{
-    margin:12px 0
+    margin:0 auto
 }
-#login-dp .social-buttons a{
+#login-dp .social-buttons button{
     width: 49%;
 }
 #login-dp .form-group {
