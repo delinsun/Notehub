@@ -63,6 +63,7 @@ $(document).ready(function() {
 function handleSignUp() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
+    /*
     if (email.length < 4) {
         alert('Please enter an email address.');
         return;
@@ -70,7 +71,7 @@ function handleSignUp() {
     if (password.length < 4) {
         alert('Please enter a password.');
         return;
-    }
+    }*/
     // Sign in with email and pass.
     // [START createwithemail]
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
