@@ -17,7 +17,7 @@ public class FirstServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("image",image);
         session.setAttribute("email",url);
-        response.sendRedirect("image.jsp");
+        response.sendRedirect("userProfile.jsp");
 
     }
 }
