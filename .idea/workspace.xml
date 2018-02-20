@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fc72910-8911-441e-a0c5-2994a7996c3e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/classes/FirstServlet.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/FirstServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NoteHub_war_exploded/image.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/FirstServlet.java" afterPath="$PROJECT_DIR$/src/FirstServlet.java" />
-      <change beforePath="$PROJECT_DIR$/web/image.jsp" afterPath="" />
-    </list>
+    <list default="true" id="4fc72910-8911-441e-a0c5-2994a7996c3e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -331,12 +325,12 @@
       <updated>1518239816757</updated>
       <workItem from="1518239823099" duration="3799000" />
       <workItem from="1518246673321" duration="270000" />
-      <workItem from="1519112007095" duration="348000" />
+      <workItem from="1519112007095" duration="469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4417000" />
+    <option name="totallyTimeSpent" value="4538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
