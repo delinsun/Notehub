@@ -52,7 +52,7 @@ function callback(){
 //show the contents
 function setContent(contents){
     //clear the search table
-    //clearContent();
+    clearContent();
     setLocation();
     //to get length first to ensure how many tr to generate
     var size=contents.length;

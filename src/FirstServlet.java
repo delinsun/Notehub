@@ -17,12 +17,14 @@ public class FirstServlet extends HttpServlet {
     static List<String> datas;
     static {
         datas = new ArrayList<>();
-        datas.add("ajax");
-        datas.add("Oliver");
-        datas.add("123");
-        datas.add("red");
-        datas.add("green");
-        datas.add("blue");
+        datas.add("Peter Ding");
+        datas.add("Oliver Sun");
+        datas.add("Deren Lei");
+        datas.add("Micheal Jordan");
+        datas.add("Messi");
+        datas.add("James Harden");
+        datas.add("Lebron James");
+        datas.add("Chandana");
     }
 
     //放置用户之间通过直接在浏览器输入地址访问这个servlet
