@@ -62,7 +62,7 @@ function setContent(contents){
         var tr=document.createElement("tr");
         var td=document.createElement("td");
         td.setAttribute("border","0");
-        td.setAttribute("bgcolor","white");
+        td.setAttribute("bgcolor","black");
         td.onmouseover=function(){
             this.className='mouseOver';
         };
