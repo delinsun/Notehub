@@ -152,13 +152,13 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword"
                                onkeyup="getMoreContents()" onblur="keywordBlur()" onfocus="get">
-                        <div id="popDiv">
-                            <table id="content_table" bgcolor="black" border="0" cellspacing="0" cellpadding="0">
-                                <tbody id="content_table_body">
-                                <!--how to show the search result-->
-                                </tbody>
-                            </table>
-                        </div>
+                            <div id="popDiv">
+                                <table id="content_table" bgcolor="black" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody id="content_table_body">
+                                    <!--how to show the search result-->
+                                    </tbody>
+                                </table>
+                            </div>
                     </div>
                 </form>
             </ul>

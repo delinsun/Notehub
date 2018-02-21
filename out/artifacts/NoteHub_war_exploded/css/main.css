@@ -111,5 +111,7 @@ hr {
     background: black;
     color:white;
 }
-
+.navbar {
+    height: 50px;
+}
 
