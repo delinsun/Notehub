@@ -13,73 +13,103 @@ html {
 }
 
 h1 {
-	font-weight: 700;
-	font-size: 5em;
+    font-weight: 700;
+    font-size: 5em;
 }
 
-
-.content{
-	padding-top: 25%;
-	text-align: center;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-               0px 8px 13px rgba(0,0,0,0.1),
-               0px 18px 23px rgba(0,0,0,0.1);
+.content {
+    padding-top: 25%;
+    text-align: center;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 hr {
     width: 400px;
     border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-#login-dp{
+#login-dp {
     min-width: 250px;
     padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, .8);
     color: black
 }
-#login-dp .help-block{
-    font-size:12px
+
+#login-dp .help-block {
+    font-size: 12px
 }
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
+
+#login-dp .bottom {
+    background-color: rgba(255, 255, 255, .8);
+    border-top: 1px solid #ddd;
+    clear: both;
+    padding: 14px;
 }
-#login-dp .social-buttons{
-    margin:0 auto
+
+#login-dp .social-buttons {
+    margin: 0 auto
 }
-#login-dp .social-buttons button{
+
+#login-dp .social-buttons button {
     width: 49%;
 }
+
 #login-dp .form-group {
     margin-bottom: 10px;
 }
-.btn-fb{
+
+.btn-fb {
     color: #fff;
-    background-color:#3b5998;
+    background-color: #3b5998;
 }
-.btn-fb:hover{
+
+.btn-fb:hover {
     color: #fff;
-    background-color:#496ebc
+    background-color: #496ebc
 }
-.btn-tw{
+
+.btn-tw {
     color: #fff;
-    background-color:#55acee;
+    background-color: #55acee;
 }
-.btn-tw:hover{
+
+.btn-tw:hover {
     color: #fff;
-    background-color:#59b5fa;
+    background-color: #59b5fa;
 }
-@media(max-width:768px){
-    #login-dp{
+
+@media (max-width: 768px) {
+    #login-dp {
         background-color: inherit;
         color: #fff;
     }
-    #login-dp .bottom{
+
+    #login-dp .bottom {
         background-color: inherit;
-        border-top:0 none;
+        border-top: 0 none;
     }
 }
+
+#mainProfile {
+    color: black;
+    padding-top: 5%;
+}
+
+#bigName {
+    color: white;
+}
+
+.mouseOver{
+    background: #708090;
+    color:#FFFAFA;
+}
+.mouseOut{
+    background: black;
+    color:white;
+}
+
+
