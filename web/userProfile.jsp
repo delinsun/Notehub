@@ -16,19 +16,28 @@
           type="text/css">
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/search.js"></script>
 </head>
 <body>
 <%
     String profileImageUrl;
-    String email;
-    String emailName;
-    if (session.getAttribute("image") == null) {
+    String email = "";
+    String emailName = "";
+    if (session.getAttribute("emailname") == null && session.getAttribute("keywordjump") == null) {
         response.sendRedirect("index.jsp");
     }
     profileImageUrl = (String) session.getAttribute("image");
-    email = (String) session.getAttribute("email");
-    int index = email.indexOf('@');
-    emailName = email.substring(0, index);
+    if(session.getAttribute("emailname")!=null) {
+        email = (String) session.getAttribute("email");
+        int index = email.indexOf('@');
+        emailName = email.substring(0, index);
+    }
+    if(session.getAttribute("keywordjump")!=null){
+        email = (String) session.getAttribute("keywordjump");
+        emailName = email;
+    }
+
+
 %>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -47,9 +56,17 @@
                 <li class="active"><a href="#">Home</a></li>
                 <!--li><a href="#search">Search</a></li-->
                 <li><a href="#about">About</a></li>
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" action="Request">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search NoteHub">
+                        <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword" name="keywordjump"
+                               onkeyup="getMoreContents()" onblur="keywordBlur()" onfocus="getMoreContents()">
+                        <div id="popDiv">
+                            <table id="content_table" bgcolor="black" border="0" cellspacing="0" cellpadding="0">
+                                <tbody id="content_table_body">
+                                <!--how to show the search result-->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </form>
             </ul>

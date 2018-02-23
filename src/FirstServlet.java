@@ -25,6 +25,9 @@ public class FirstServlet extends HttpServlet {
         datas.add("James Harden");
         datas.add("Lebron James");
         datas.add("Chandana");
+        datas.add("Delin Sun");
+        datas.add("Haonan Ding");
+        datas.add("Dunti Mao");
     }
 
     //放置用户之间通过直接在浏览器输入地址访问这个servlet
@@ -43,12 +46,21 @@ public class FirstServlet extends HttpServlet {
         }
 
         //code for login
-        else if(request.getParameter("param1") != null) {
-            String url = request.getParameter("param1");
+        if(request.getParameter("emailname") != null) {
+            String url = request.getParameter("emailname");
             String image = MD5Util.getImgURL(url);
             HttpSession session = request.getSession();
             session.setAttribute("image", image);
-            session.setAttribute("email", url);
+            session.setAttribute("emailname", url);
+            response.sendRedirect("userProfile.jsp");
+        }
+
+        if(request.getParameter("keywordjump") != null){
+            String url = request.getParameter("keywordjump");
+            String image = MD5Util.getImgURL(url);
+            HttpSession session = request.getSession();
+            session.setAttribute("image", image);
+            session.setAttribute("keywordjump", url);
             response.sendRedirect("userProfile.jsp");
         }
     }
