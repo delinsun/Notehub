@@ -71,11 +71,7 @@
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.html">Signup <i class="fa fa-user-plus"></i></a></li>
-
-
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i
-                        class="fa fa-user"></i></a>
+            <li><a href="register.html">logout  <i class="fa fa-sign-out"></i></a></li>
 
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
@@ -146,8 +142,6 @@
                 <h1 id="bigName" class=""><%=emailName%>
                 </h1>
 
-                <button type="button" class="btn btn-success">Follow me!</button>
-                <button type="button" class="btn btn-info">Send me a message</button>
                 <br>
             </div>
             <div class="col-sm-2">
@@ -171,10 +165,6 @@
                     <li class="list-group-item text-right"><span class="pull-left"><strong
                             class="">Real name</strong></span> Joseph Doe
                     </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Role: </strong></span> Pet Sitter
-
-                    </li>
                 </ul>
 
 
@@ -186,13 +176,10 @@
                             class="">Shares</strong></span> 125
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Likes</strong></span> 13
+                            class="">Following</strong></span> <a href="follow.html">37</a>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Following</strong></span> 37
-                    </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Followers</strong></span> 78
+                            class="">Followers</strong></span> <a href="follow.html">78</a>
                     </li>
                 </ul>
                 <div class="panel panel-default">
@@ -206,120 +193,158 @@
             </div>
             <!--/col-3-->
             <div class="col-sm-9" style="" contenteditable="false">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Starfox221's Bio</div>
-                    <div class="panel-body"> A long description about me.
-
-                    </div>
-                </div>
                 <div class="panel panel-default target">
-                    <div class="panel-heading" contenteditable="false">Notes Repository</div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200"
-                                         src="http://study.com/cimages/course-image/linear-algebra-syllabus-lesson-plans_175046_large.jpg">
-                                    <div class="caption">
-                                        <h3>
-                                            Linear Algebra
-                                        </h3>
-                                        <p>
-                                            Note for Linear Algebra specifically in pseudoinverse and SVD
-                                        </p>
-                                        <p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200"
-                                         src="https://cdn-images-1.medium.com/max/2000/1*LgaStRUic1JjYfhdYplClg.jpeg">
-                                    <div class="caption">
-                                        <h3>
-                                            Computer Vision
-                                        </h3>
-                                        <p>
-                                            PowerPoints for UCSB CS181 class: an introduction for computer vision
-                                        </p>
-                                        <p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200"
-                                         src="https://axerosolutions.com/attachment?file=UZkB7AwtFeOsAZEgxrSeAg%3D%3D">
-                                    <div class="caption">
-                                        <h3>
-                                            Artificial Intelligence
-                                        </h3>
-                                        <p>
-                                            From book: Artificial Intelligence- A modern approach
-                                        </p>
-                                        <p>
+                  <div class="panel-heading" contenteditable="false">Notes Repository</div>
+                  <div class="panel-body">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="thumbnail">
+                                  <a href="pdfList.html">
+                                  <img alt="300x200" src="http://study.com/cimages/course-image/linear-algebra-syllabus-lesson-plans_175046_large.jpg">
+                                  </a>
+                                  <div class="caption">
+                                      <h3>
+                                        Mathematics
+                                      </h3>
+                                      <p>
 
-                                        </p>
-                                    </div>
-                                </div>
+                                      </p>
 
-                            </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="thumbnail">
+                                  <a href="pdfList.html">
+                                  <img alt="300x200" src="https://cdn-images-1.medium.com/max/2000/1*LgaStRUic1JjYfhdYplClg.jpeg">
+                                  </a>
+                                  <div class="caption">
+                                      <h3>
+                                        Computer Science
+                                      </h3>
+                                      <p>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200"
-                                         src="https://cdn-images-1.medium.com/max/479/1*QVIyc5HnGDWTNX3m-nIm9w.png">
-                                    <div class="caption">
-                                        <h3>
-                                            Deep Learning
-                                        </h3>
-                                        <p>
-                                            Playground for me to learn basic RNN, CNN, LSTM, GAN
-                                        </p>
-                                        <p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200"
-                                         src="https://rudeboybert.github.io/MATH218/assets/figure/StatisticalLearning.png">
-                                    <div class="caption">
-                                        <h3>
-                                            Statistical ML
-                                        </h3>
-                                        <p>
-                                            Notes for CMU open course: Machine Learning 10-702 in spring
-                                        </p>
-                                        <p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="300x200"
-                                         src="http://study.com/cimages/course-image/virginia-sol-world-history-geography-to-1500-test-prep-practice_217975_large.jpg">
-                                    <div class="caption">
-                                        <h3>
-                                            World History
-                                        </h3>
-                                        <p>
-                                            World History notes specifically focus on ancient Europe and Asia
-                                        </p>
-                                        <p>
+                                      </p>
 
-                                        </p>
-                                    </div>
-                                </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="thumbnail">
+                                  <a href="pdfList.html">
+                                  <img alt="300x200" src="https://axerosolutions.com/attachment?file=UZkB7AwtFeOsAZEgxrSeAg%3D%3D">
+                                  </a>
+                                  <div class="caption">
+                                      <h3>
+                                        Art & Music
+                                      </h3>
+                                      <p>
 
-                            </div>
+                                      </p>
+                                  </div>
+                              </div>
 
+                          </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="thumbnail">
+                                  <a href="pdfList.html">
+                                  <img alt="300x200" src="https://salespop.pipelinersales.com/wp-content/uploads/2014/04/the-benefit-of-web-services-to-a-crm-software.jpg">
+                                </a>
+                                  <div class="caption">
+                                      <h3>
+                                        Business
+                                      </h3>
+                                      <p>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="thumbnail">
+                                  <a href="pdfList.html">
+                                  <img alt="300x200" src="https://cdn.lynda.com/course/503930/503930-636173965766935316-16x9.jpg">
+                                  </a>
+                                  <div class="caption">
+                                      <h3>
+                                        Statistical Science
+                                      </h3>
+                                      <p>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="thumbnail">
+                                  <a href="pdfList.html">
+                                  <img alt="300x200" src="http://study.com/cimages/course-image/virginia-sol-world-history-geography-to-1500-test-prep-practice_217975_large.jpg">
+                                </a>
+                                  <div class="caption">
+
+                                      <h3>
+                                        World History
+                                      </h3>
+                                      <p>
+
+                                      </p>
+                                  </div>
+                              </div>
+
+                          </div>
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <div class="thumbnail">
+                                      <a href="pdfList.html">
+                                      <img alt="300x200" src="https://urbangeekz.com/wp-content/uploads/2015/10/Not-Rocket-Science-How-to-Uncomplicate-Your-Business-Model-837x480.jpg">
+                                      </a>
+                                      <div class="caption">
+                                          <h3>
+                                            Physics
+                                          </h3>
+                                          <p>
+
+                                          </p>
+
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4">
+                                  <div class="thumbnail">
+                                      <a href="pdfList.html">
+                                      <img alt="300x200" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fa/6926005ea411e490ff8d4c5d4ff426/chemistry_logo.png">
+                                      </a>
+                                      <div class="caption">
+                                          <h3>
+                                            Chemistry
+                                          </h3>
+                                          <p>
+
+                                          </p>
+
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-4">
+                                  <div class="thumbnail">
+                                      <a href="pdfList.html">
+                                      <img alt="300x200" src="http://radon-mclean.org/wp-content/uploads/sites/82/2016/07/Literature-and-Novels.jpg">
+                                      </a>
+                                      <div class="caption">
+                                          <h3>
+                                            Literature
+                                          </h3>
+                                          <p>
+
+                                          </p>
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+            						<div align = "right"><a href="repository.html">Show all    <i class="fa fa-plus"></i></a></div>
                         </div>
                     </div>
                 </div>
