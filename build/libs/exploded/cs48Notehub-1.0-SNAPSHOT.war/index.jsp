@@ -68,7 +68,7 @@
                                     </div>
                                     or
                                     <form class="form" role="form" action="Request" name="form1" accept-charset="UTF-8"
-                                          id="login-div">
+                                          id="login-nav">
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
                                             <input type="email" class="form-control" id="exampleInputEmail2"
@@ -90,9 +90,10 @@
                                                 <input type="checkbox"> keep me logged-in
                                             </label>
                                         </div>
-
+                                    </form>
 
                                 </div>
+
                                 <!--
                                 <div id="user_div" class="loggedin-div">
 

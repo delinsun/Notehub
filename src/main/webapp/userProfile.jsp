@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   User: Zichen Sun
   Date: 9/2/2018
@@ -20,23 +22,67 @@
 </head>
 <body>
 <%
+    //variables initialization
     String profileImageUrl;
     String email = "";
     String emailName = "";
-    if (session.getAttribute("emailname") == null && session.getAttribute("keywordjump") == null) {
+    int followerNum = 0;
+    int followingNum = 0;
+    Map<String,String> descriptionMap = new HashMap<>();
+    Map<String,Integer> yearMap = new HashMap<>();
+    Map<String,String> monthMap = new HashMap<>();
+    Map<String,String> tagMap = new HashMap<>();
+    ArrayList<String> nameArray = new ArrayList<>();
+    //tags array
+    ArrayList<String> MathArray = new ArrayList<>();
+    ArrayList<String> CSArray = new ArrayList<>();
+    ArrayList<String> ArtArray = new ArrayList<>();
+    ArrayList<String> LitArray = new ArrayList<>();
+    ArrayList<String> BusArray = new ArrayList<>();
+    ArrayList<String> StatArray = new ArrayList<>();
+    ArrayList<String> HistoryArray = new ArrayList<>();
+    ArrayList<String> PhysicsArray = new ArrayList<>();
+    ArrayList<String> ChemArray = new ArrayList<>();
+
+    //Get variables
+    if (session.getAttribute("email") == null && session.getAttribute("keywordjump") == null) {
         response.sendRedirect("index.jsp");
     }
     profileImageUrl = (String) session.getAttribute("image");
-    if(session.getAttribute("emailname")!=null) {
+    if(session.getAttribute("email")!=null) {
         email = (String) session.getAttribute("email");
-        int index = email.indexOf('@');
-        emailName = email.substring(0, index);
+        emailName = (String) session.getAttribute("username");
     }
     if(session.getAttribute("keywordjump")!=null){
         email = (String) session.getAttribute("keywordjump");
         emailName = email;
     }
+    if(session.getAttribute("followerNum") != null){
+        followerNum = (int) session.getAttribute("followerNum");
+    }
+    if(session.getAttribute("followingNum") != null){
+        followingNum = (int) session.getAttribute("followingNum");
+    }
 
+    if(session.getAttribute("descriptionMap") != null){
+         descriptionMap = (Map<String, String>) session.getAttribute("descriptionMap");
+    }
+
+    if(session.getAttribute("yearMap") != null){
+        yearMap = (Map<String, Integer>) session.getAttribute("yearMap");
+    }
+
+    if(session.getAttribute("monthMap") != null){
+        monthMap = (Map<String, String>) session.getAttribute("monthMap");
+    }
+
+    if(session.getAttribute("tagMap") != null){
+        tagMap = (Map<String, String>) session.getAttribute("tagMap");
+    }
+
+    if(session.getAttribute("nameArray") != null){
+        nameArray = (ArrayList<String>) session.getAttribute("nameArray");
+    }
 
 %>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -71,7 +117,7 @@
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-            <li><a href="register.html">logout  <i class="fa fa-sign-out"></i></a></li>
+            <li><a href="index.jsp">logout  <i class="fa fa-sign-out"></i></a></li>
 
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
@@ -111,6 +157,7 @@
 
 
                                 </div>
+                                <!--
                                 <div id="user_div" class="loggedin-div">
 
                                     <h3>Welcome User</h3>
@@ -119,9 +166,7 @@
 
                                     <button onclick="logout()">Logout</button>
                                 </div>
-                            </div>
-                            <div class="bottom text-center">
-                                New here ? <a href="register.html"><b>Join Us</b></a>
+                                -->
                             </div>
         </div>
         </li>
@@ -157,13 +202,13 @@
                 <ul class="list-group">
                     <li class="list-group-item text-muted" contenteditable="false">Profile</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Joined</strong></span> 2.13.2014
+                            class="">Joined</strong></span> 2.13.2018
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
                             class="">Last seen</strong></span> Yesterday
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Real name</strong></span> Joseph Doe
+                            class="">Real name</strong></span> <%=emailName%>
                     </li>
                 </ul>
 
@@ -176,10 +221,10 @@
                             class="">Shares</strong></span> 125
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Following</strong></span> <a href="follow.html">37</a>
+                            class="">Following</strong></span> <a href="follow.html"><%=followingNum%></a>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Followers</strong></span> <a href="follow.html">78</a>
+                            class="">Followers</strong></span> <a href="follow.html"><%=followerNum%></a>
                     </li>
                 </ul>
                 <div class="panel panel-default">
@@ -199,7 +244,7 @@
                       <div class="row">
                           <div class="col-md-4">
                               <div class="thumbnail">
-                                  <a href="pdfList.html">
+                                  <a href="MathList.jsp">
                                   <img alt="300x200" src="http://study.com/cimages/course-image/linear-algebra-syllabus-lesson-plans_175046_large.jpg">
                                   </a>
                                   <div class="caption">
@@ -215,7 +260,7 @@
                           </div>
                           <div class="col-md-4">
                               <div class="thumbnail">
-                                  <a href="pdfList.html">
+                                  <a href="CSList.jsp">
                                   <img alt="300x200" src="https://cdn-images-1.medium.com/max/2000/1*LgaStRUic1JjYfhdYplClg.jpeg">
                                   </a>
                                   <div class="caption">
@@ -231,7 +276,7 @@
                           </div>
                           <div class="col-md-4">
                               <div class="thumbnail">
-                                  <a href="pdfList.html">
+                                  <a href="ArtList.jsp">
                                   <img alt="300x200" src="https://axerosolutions.com/attachment?file=UZkB7AwtFeOsAZEgxrSeAg%3D%3D">
                                   </a>
                                   <div class="caption">
@@ -250,7 +295,7 @@
                       <div class="row">
                           <div class="col-md-4">
                               <div class="thumbnail">
-                                  <a href="pdfList.html">
+                                  <a href="BusList.jsp">
                                   <img alt="300x200" src="https://salespop.pipelinersales.com/wp-content/uploads/2014/04/the-benefit-of-web-services-to-a-crm-software.jpg">
                                 </a>
                                   <div class="caption">
@@ -264,7 +309,7 @@
                           </div>
                           <div class="col-md-4">
                               <div class="thumbnail">
-                                  <a href="pdfList.html">
+                                  <a href="StatList.jsp">
                                   <img alt="300x200" src="https://cdn.lynda.com/course/503930/503930-636173965766935316-16x9.jpg">
                                   </a>
                                   <div class="caption">
@@ -278,7 +323,7 @@
                           </div>
                           <div class="col-md-4">
                               <div class="thumbnail">
-                                  <a href="pdfList.html">
+                                  <a href="HistoryList.jsp">
                                   <img alt="300x200" src="http://study.com/cimages/course-image/virginia-sol-world-history-geography-to-1500-test-prep-practice_217975_large.jpg">
                                 </a>
                                   <div class="caption">
@@ -296,7 +341,7 @@
                           <div class="row">
                               <div class="col-md-4">
                                   <div class="thumbnail">
-                                      <a href="pdfList.html">
+                                      <a href="PhysicsList.jsp">
                                       <img alt="300x200" src="https://urbangeekz.com/wp-content/uploads/2015/10/Not-Rocket-Science-How-to-Uncomplicate-Your-Business-Model-837x480.jpg">
                                       </a>
                                       <div class="caption">
@@ -312,7 +357,7 @@
                               </div>
                               <div class="col-md-4">
                                   <div class="thumbnail">
-                                      <a href="pdfList.html">
+                                      <a href="ChemList.jsp">
                                       <img alt="300x200" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fa/6926005ea411e490ff8d4c5d4ff426/chemistry_logo.png">
                                       </a>
                                       <div class="caption">
@@ -328,7 +373,7 @@
                               </div>
                               <div class="col-md-4">
                                   <div class="thumbnail">
-                                      <a href="pdfList.html">
+                                      <a href="LitList.jsp">
                                       <img alt="300x200" src="http://radon-mclean.org/wp-content/uploads/sites/82/2016/07/Literature-and-Novels.jpg">
                                       </a>
                                       <div class="caption">
@@ -674,6 +719,13 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="js/facebooklogin.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/firebase.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
 </body>
 </html>
