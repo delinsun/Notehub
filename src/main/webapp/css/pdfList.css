@@ -48,6 +48,10 @@ line-height: 1;
 .event-list > li > img {
 width: 100%;
 }
+.event-list > li > embed {
+width: 100%;
+}
+
 .event-list > li > .info {
 padding-top: 5px;
 text-align: center;
@@ -135,6 +139,27 @@ background-color: rgb(221, 75, 57) !important;
   padding: 0px;
 }
 .event-list > li > time,
+.event-list > li > embed  {
+  display: inline-block;
+}
+.event-list > li > time,
+.event-list > li > embed {
+  width: 120px;
+  float: left;
+}
+.event-list > li > .info {
+  background-color: rgb(245, 245, 245);
+  overflow: hidden;
+}
+.event-list > li > time,
+.event-list > li > embed {
+  width: 120px;
+  height: 120px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.event-list > li > time,
 .event-list > li > img  {
   display: inline-block;
 }
@@ -154,6 +179,7 @@ background-color: rgb(221, 75, 57) !important;
   padding: 0px;
   margin: 0px;
 }
+
 .event-list > li > .info {
   position: relative;
   height: 120px;
