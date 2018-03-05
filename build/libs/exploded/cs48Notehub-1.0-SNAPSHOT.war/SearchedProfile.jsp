@@ -134,7 +134,7 @@
                                     <div class="form-group">
                                         <label class="sr-only" for="exampleInputEmail2">Email address</label>
                                         <input type="email" class="form-control" id="exampleInputEmail2"
-                                               name="email" placeholder="Email address" required>
+                                               name="param1" placeholder="Email address" required>
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="exampleInputPassword2">Password</label>
@@ -165,9 +165,6 @@
                                 <button onclick="logout()">Logout</button>
                             </div>
                             -->
-                        </div>
-                        <div class="bottom text-center">
-                            New here ? <a href="register.html"><b>Join Us</b></a>
                         </div>
         </div>
         </li>

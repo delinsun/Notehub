@@ -215,6 +215,7 @@
                 <span class="year"><%=year1%></span>
                 <span class="time">ALL DAY</span>
               </time>
+              <a href=<%="Request?downloadname="+title1+"&downloadtag="+"Art & Music"%>> </a>
               <img alt="Example Picture" src="https://mafiadoc.com/img/260x300/full-text-in-pdf-format-115kb-ucsb-computer-scienc_5a1075f71723dd48dbc5fc3c.jpg" />
               <div class="info">
                 <h2 class="title"><%=title1%></h2>
@@ -229,11 +230,12 @@
 
             <li>
               <time datetime="2014-07-20">
-                <span class="day">2</span>
+                <span class="day"></span>
                 <span class="month"><%=month2%></span>
                 <span class="year"><%=year2%></span>
                 <span class="time">ALL DAY</span>
               </time>
+              <a href=<%="Request?downloadname="+title2+"&downloadtag="+"Art & Music"%>> </a>
               <img alt="Example Picture" src="http://slideplayer.com/6383097/22/images/4/UCSB+CS+Sequence%3A+165A+and+165B.jpg" />
               <div class="info">
                 <h2 class="title"><%=title2%></h2>
@@ -248,11 +250,12 @@
 
             <li>
               <time datetime="2014-07-20">
-                <span class="day">2</span>
+                <span class="day"></span>
                 <span class="month"><%=month3%></span>
                 <span class="year"><%=year3%></span>
                 <span class="time">ALL DAY</span>
               </time>
+              <a href=<%="Request?downloadname="+title3+"&downloadtag="+"Art & Music"%>> </a>
               <img alt="Example Picture" src="https://img.yumpu.com/17549339/1/358x269/ucsb-cs-178-intro-to-crypto.jpg?quality=85" />
               <div class="info">
                 <h2 class="title"><%=title3%></h2>
@@ -267,11 +270,12 @@
 
             <li>
               <time datetime="2014-08-20">
-                <span class="day">2</span>
+                <span class="day"></span>
                 <span class="month"><%=month4%></span>
                 <span class="year"><%=year4%></span>
                 <span class="time">ALL DAY</span>
               </time>
+              <a href=<%="Request?downloadname="+title4+"&downloadtag="+"Art & Music"%>> </a>
               <img alt="Example Picture" src="https://cs.ucsb.edu/~victor/ta/cs40m15/tilings-and-fibonacci.jpg" />
               <div class="info">
                 <h2 class="title"><%=title4%></h2>
@@ -286,11 +290,12 @@
 
             <li>
               <time datetime="2014-07-20">
-                <span class="day">2</span>
+                <span class="day"></span>
                 <span class="month"><%=month5%></span>
                 <span class="year"><%=year5%></span>
                 <span class="time">ALL DAY</span>
               </time>
+              <a href=<%="Request?downloadname="+title5+"&downloadtag="+"Art & Music"%>> </a>
               <img alt="Example Picture" src="http://slideplayer.com/6383097/22/images/4/UCSB+CS+Sequence%3A+165A+and+165B.jpg" />
               <div class="info">
                 <h2 class="title"><%=title5%></h2>
@@ -305,11 +310,12 @@
 
             <li>
               <time datetime="2014-07-20">
-                <span class="day">2</span>
+                <span class="day"></span>
                 <span class="month"><%=month6%></span>
                 <span class="year"><%=year6%></span>
                 <span class="time">ALL DAY</span>
               </time>
+              <a href=<%="Request?downloadname="+title6+"&downloadtag="+"Art & Music"%>> </a>
               <img alt="Example Picture" src="http://slideplayer.com/6383097/22/images/4/UCSB+CS+Sequence%3A+165A+and+165B.jpg" />
               <div class="info">
                 <h2 class="title"><%=title6%></h2>

@@ -185,6 +185,9 @@
                 <h1 id="bigName" class=""><%=emailName%>
                 </h1>
 
+                <button type="button" class="btn btn-success">Follow me!</button>
+                <button type="button" class="btn btn-info">Send me an email</button>
+
                 <br>
             </div>
             <div class="col-sm-2">

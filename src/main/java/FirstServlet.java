@@ -51,6 +51,7 @@ public class FirstServlet extends HttpServlet {
     Map<String, String> tagMap = new HashMap<>();
     Map<String, String> monthMap = new HashMap<>();
     Map<String, String> yearMap = new HashMap<>();
+    Map<String,String> uriMap = new HashMap<>();
     ArrayList<String> nameArray = new ArrayList<>();
     Map<String, PDF> pdfs;
 
@@ -69,7 +70,7 @@ public class FirstServlet extends HttpServlet {
         datas.add("Micheal Jordan");
         datas.add("Messi");
         datas.add("PeterD");
-        datas.add("Hide_in_the_bush");
+        datas.add("Chandana");
     }
 
     public FirstServlet() {
@@ -188,6 +189,7 @@ public class FirstServlet extends HttpServlet {
                 tagMap.put(entry.getKey(),pdf.tag);
                 nameArray.add(entry.getKey());
             }
+
             descriptionMap.put("","");
             yearMap.put("","");
             monthMap.put("","");
@@ -253,14 +255,89 @@ public class FirstServlet extends HttpServlet {
             response.sendRedirect("userProfile.jsp");
         }
 
+        //download
+        /*
+        if(request.getParameter("downloadtag") != null && request.getParameter("downloadname") != null){
+            //firebase
+            HttpSession session = request.getSession();
+            String username = null;
+            if(session.getAttribute("email") != null)
+                username = (String) session.getAttribute("email");
+            else
+                username = (String) session.getAttribute("keywordjump");
+            final FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference ref = database.getReference("username/" + username);
+            // firebase
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    final String uid = dataSnapshot.getValue(String.class);
+
+                    DatabaseReference ref1 = database.getReference("users/" + uid);
+                    ValueEventListener postListener = new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            User user = dataSnapshot.getValue(User.class);
+
+
+                            String tag = (String) session.getAttribute("downloadtag");
+                            String filename = (String) session.getAttribute("downloadname");
+
+                                final String file_name = username + "_" + filename;
+                                StorageReference storageRef = storage.getReference();
+                                StorageReference fileRef = storageRef.child(tag + "/" + file_name);
+                                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        // Got the download URL for 'users/me/profile.png'
+                                        String temp = uri.toString();
+
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                        // Handle any errors
+                                    }
+                                });
+                            }
+
+
+
+
+
+
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            // Getting Post failed, log a message
+                            // ...
+                            latch.countDown();
+                        }
+                    };
+                    ref1.addListenerForSingleValueEvent(postListener);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    // ...
+                    latch.countDown();
+                }
+            });
+
+        }
+        */
+
         //code for search jump
         if (request.getParameter("keywordjump") != null) {
             String url = request.getParameter("keywordjump");
             //latch the method to wait for the Firebase
             latch = new CountDownLatch(1);
             String image = MD5Util.getImgURL(url);
-            int index = url.indexOf('@');
-            String username = url.substring(0, index);
+            String username = url;
             HttpSession session = request.getSession();
             //firebase
             final FirebaseDatabase database = FirebaseDatabase.getInstance();

@@ -168,9 +168,6 @@
                                 </div>
                                 -->
                             </div>
-                            <div class="bottom text-center">
-                                New here ? <a href="register.html"><b>Join Us</b></a>
-                            </div>
         </div>
         </li>
         </ul>
