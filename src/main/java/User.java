@@ -23,7 +23,7 @@ public class User {
         this.email = email;
         this.followers = new HashMap<String, Object>(followers);
         this.following = new HashMap<String, Object>(following);
-        this.pdfs = new HashMap<String,PDF>(pdfs);
+        this.pdfs = new HashMap<String, PDF>(pdfs);
         this.tags = new HashMap<String, Object>(tags);
         this.isNew = isNew;
     }

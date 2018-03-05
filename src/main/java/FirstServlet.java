@@ -34,7 +34,7 @@ public class FirstServlet extends HttpServlet {
     CountDownLatch latch;
     int followerNum = 0;
     int followingNum = 0;
-
+    boolean userArraygetted = false;
     //set ArrayList by tag
     ArrayList<String> MathArray = new ArrayList<>();
     ArrayList<String> CSArray = new ArrayList<>();
@@ -51,9 +51,14 @@ public class FirstServlet extends HttpServlet {
     Map<String, String> tagMap = new HashMap<>();
     Map<String, String> monthMap = new HashMap<>();
     Map<String, String> yearMap = new HashMap<>();
-    Map<String,String> uriMap = new HashMap<>();
+    Map<String,String> urlMap = new HashMap<>();
+    Map<String,String> dayMap = new HashMap<>();
+    //pdf names
     ArrayList<String> nameArray = new ArrayList<>();
+    //user names
+    ArrayList<String> userArray = new ArrayList<>();
     Map<String, PDF> pdfs;
+    Map<String,String> names;
 
     //create a list of data for search to search
     static List<String> datas;
@@ -119,6 +124,40 @@ public class FirstServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
+        if(userArraygetted == false){
+            HttpSession session = request.getSession();
+            latch = new CountDownLatch(1);
+            mUserReference = FirebaseDatabase.getInstance().getReference("username");
+            ValueEventListener postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    names = new HashMap<String, String>((Map<String,String>) dataSnapshot.getValue());
+                    session.setAttribute("names",names);
+                    latch.countDown();
+                    // ...
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                    latch.countDown();
+                    // ...
+                }
+            };
+            mUserReference.addListenerForSingleValueEvent(postListener);
+            try {
+                latch.await(120, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            names = (Map<String, String>) session.getAttribute("names");
+            for (Map.Entry<String,String> entry: names.entrySet()){
+                userArray.add(entry.getKey());
+            }
+            userArraygetted = true;
+        }
         // code for the search
         if (request.getParameter("keyword") != null) {
             String keyword = request.getParameter("keyword");
@@ -128,13 +167,34 @@ public class FirstServlet extends HttpServlet {
 
         //code for login
         if (request.getParameter("email") != null) {
+            //renew lists and maps
+            MathArray = new ArrayList<>();
+            CSArray = new ArrayList<>();
+            ArtArray = new ArrayList<>();
+            LitArray = new ArrayList<>();
+            BusArray = new ArrayList<>();
+            StatArray = new ArrayList<>();
+            HistoryArray = new ArrayList<>();
+            PhysicsArray = new ArrayList<>();
+            ChemArray = new ArrayList<>();
+            monthConvert = new HashMap<>();
+            descriptionMap = new HashMap<>();
+            tagMap = new HashMap<>();
+            monthMap = new HashMap<>();
+            yearMap = new HashMap<>();
+            urlMap = new HashMap<>();
+            dayMap = new HashMap<>();
+            nameArray = new ArrayList<>();
             //latch the method to wait for the Firebase
             latch = new CountDownLatch(1);
-
             String url = request.getParameter("email");
             String image = MD5Util.getImgURL(url);
             int index = url.indexOf('@');
             String username = url.substring(0, index);
+            if(!userArray.contains(username)){
+                response.sendRedirect("index.jsp");
+                return;
+            }
             HttpSession session = request.getSession();
             //firebase
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -187,16 +247,10 @@ public class FirstServlet extends HttpServlet {
                 yearMap.put(entry.getKey(), String.valueOf(pdf.year));
                 monthMap.put(entry.getKey(),monthConvert.get(pdf.month));
                 tagMap.put(entry.getKey(),pdf.tag);
+                dayMap.put(entry.getKey(), String.valueOf(pdf.day));
+                urlMap.put(entry.getKey(),pdf.url);
                 nameArray.add(entry.getKey());
             }
-
-            descriptionMap.put("","");
-            yearMap.put("","");
-            monthMap.put("","");
-            tagMap.put("","");
-
-            descriptionMap.put("", "");
-            tagMap.put("", "");
             for (Map.Entry<String, String> entry : tagMap.entrySet()) {
                 String temp = (String) entry.getValue();
                 String tempkey = (String) entry.getKey();
@@ -221,24 +275,14 @@ public class FirstServlet extends HttpServlet {
             }
 
 
-            for (int i = 0; i < 7; i++) {
-                MathArray.add("");
-                CSArray.add("");
-                ArtArray.add("");
-                StatArray.add("");
-                HistoryArray.add("");
-                PhysicsArray.add("");
-                ChemArray.add("");
-                LitArray.add("");
-                BusArray.add("");
-            }
-
-
             //Set by session
+            session.setAttribute("shared",nameArray.size());
             session.setAttribute("descriptionMap",descriptionMap);
             session.setAttribute("yearMap",yearMap);
             session.setAttribute("monthMap",monthMap);
             session.setAttribute("tagMap",tagMap);
+            session.setAttribute("dayMap",dayMap);
+            session.setAttribute("urlMap",urlMap);
             //tag array
             session.setAttribute("nameArray", nameArray);
             session.setAttribute("MathArray", MathArray);
@@ -254,90 +298,35 @@ public class FirstServlet extends HttpServlet {
             session.setAttribute("email", url);
             response.sendRedirect("userProfile.jsp");
         }
-
-        //download
-        /*
-        if(request.getParameter("downloadtag") != null && request.getParameter("downloadname") != null){
-            //firebase
-            HttpSession session = request.getSession();
-            String username = null;
-            if(session.getAttribute("email") != null)
-                username = (String) session.getAttribute("email");
-            else
-                username = (String) session.getAttribute("keywordjump");
-            final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference ref = database.getReference("username/" + username);
-            // firebase
-            ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    final String uid = dataSnapshot.getValue(String.class);
-
-                    DatabaseReference ref1 = database.getReference("users/" + uid);
-                    ValueEventListener postListener = new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            User user = dataSnapshot.getValue(User.class);
-
-
-                            String tag = (String) session.getAttribute("downloadtag");
-                            String filename = (String) session.getAttribute("downloadname");
-
-                                final String file_name = username + "_" + filename;
-                                StorageReference storageRef = storage.getReference();
-                                StorageReference fileRef = storageRef.child(tag + "/" + file_name);
-                                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
-                                        // Got the download URL for 'users/me/profile.png'
-                                        String temp = uri.toString();
-
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception exception) {
-                                        // Handle any errors
-                                    }
-                                });
-                            }
-
-
-
-
-
-
-
-
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            // Getting Post failed, log a message
-                            // ...
-                            latch.countDown();
-                        }
-                    };
-                    ref1.addListenerForSingleValueEvent(postListener);
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    // Getting Post failed, log a message
-                    // ...
-                    latch.countDown();
-                }
-            });
-
-        }
-        */
-
         //code for search jump
         if (request.getParameter("keywordjump") != null) {
+            //renew lists and maps
+            MathArray = new ArrayList<>();
+            CSArray = new ArrayList<>();
+            ArtArray = new ArrayList<>();
+            LitArray = new ArrayList<>();
+            BusArray = new ArrayList<>();
+            StatArray = new ArrayList<>();
+            HistoryArray = new ArrayList<>();
+            PhysicsArray = new ArrayList<>();
+            ChemArray = new ArrayList<>();
+            monthConvert = new HashMap<>();
+            descriptionMap = new HashMap<>();
+            tagMap = new HashMap<>();
+            monthMap = new HashMap<>();
+            yearMap = new HashMap<>();
+            urlMap = new HashMap<>();
+            dayMap = new HashMap<>();
+            nameArray = new ArrayList<>();
             String url = request.getParameter("keywordjump");
             //latch the method to wait for the Firebase
             latch = new CountDownLatch(1);
             String image = MD5Util.getImgURL(url);
             String username = url;
+            if(!userArray.contains(username)){
+                response.sendRedirect("index.jsp");
+                return;
+            }
             HttpSession session = request.getSession();
             //firebase
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -390,15 +379,10 @@ public class FirstServlet extends HttpServlet {
                 yearMap.put(entry.getKey(), String.valueOf(pdf.year));
                 monthMap.put(entry.getKey(),monthConvert.get(pdf.month));
                 tagMap.put(entry.getKey(),pdf.tag);
+                urlMap.put(entry.getKey(),pdf.url);
+                dayMap.put(entry.getKey(), String.valueOf(pdf.day));
                 nameArray.add(entry.getKey());
             }
-            descriptionMap.put("","");
-            yearMap.put("","");
-            monthMap.put("","");
-            tagMap.put("","");
-
-            descriptionMap.put("", "");
-            tagMap.put("", "");
             for (Map.Entry<String, String> entry : tagMap.entrySet()) {
                 String temp = (String) entry.getValue();
                 String tempkey = (String) entry.getKey();
@@ -423,24 +407,14 @@ public class FirstServlet extends HttpServlet {
             }
 
 
-            for (int i = 0; i < 7; i++) {
-                MathArray.add("");
-                CSArray.add("");
-                ArtArray.add("");
-                StatArray.add("");
-                HistoryArray.add("");
-                PhysicsArray.add("");
-                ChemArray.add("");
-                LitArray.add("");
-                BusArray.add("");
-            }
-
-
             //Set by session
+            session.setAttribute("shared",nameArray.size());
             session.setAttribute("descriptionMap",descriptionMap);
             session.setAttribute("yearMap",yearMap);
             session.setAttribute("monthMap",monthMap);
             session.setAttribute("tagMap",tagMap);
+            session.setAttribute("urlMap",urlMap);
+            session.setAttribute("dayMap",dayMap);
             //tag array
             session.setAttribute("nameArray", nameArray);
             session.setAttribute("MathArray", MathArray);
@@ -461,9 +435,10 @@ public class FirstServlet extends HttpServlet {
     //template function to generate a list of words to search
     public List<String> getData(String keyword) {
         List<String> list = new ArrayList<>();
-        for (String data : this.datas) {
+        for (String data : this.userArray) {
             if (data.contains(keyword)) {
-                list.add(data);
+                if(!list.contains(data))
+                    list.add(data);
             }
         }
         return list;

@@ -28,6 +28,7 @@
     String emailName = "";
     int followerNum = 0;
     int followingNum = 0;
+    int shared = 0;
     Map<String,String> descriptionMap = new HashMap<>();
     Map<String,Integer> yearMap = new HashMap<>();
     Map<String,String> monthMap = new HashMap<>();
@@ -63,6 +64,8 @@
     if(session.getAttribute("followingNum") != null){
         followingNum = (int) session.getAttribute("followingNum");
     }
+    if(session.getAttribute("shared") != null)
+        shared = (int) session.getAttribute("shared");
 
     if(session.getAttribute("descriptionMap") != null){
          descriptionMap = (Map<String, String>) session.getAttribute("descriptionMap");
@@ -218,7 +221,7 @@
 
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Shares</strong></span> 125
+                            class="">Shares</strong></span> <%=shared%>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
                             class="">Following</strong></span> <a href="follow.html"><%=followingNum%></a>
