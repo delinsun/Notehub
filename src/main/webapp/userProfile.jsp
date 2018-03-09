@@ -305,9 +305,9 @@
                                       <h3>
                                         Mathematics
                                       </h3>
-                                      <p>
-
-                                      </p>
+																					<p align="right">
+                                              Total: 0
+                                          </p>
 
                                   </div>
                               </div>
@@ -321,9 +321,9 @@
                                       <h3>
                                         Computer Science
                                       </h3>
-                                      <p>
-
-                                      </p>
+																					<p align="right">
+                                              Total: 0
+                                          </p>
 
                                   </div>
                               </div>
@@ -337,9 +337,9 @@
                                       <h3>
                                         Art & Music
                                       </h3>
-                                      <p>
-
-                                      </p>
+																					<p align="right">
+                                              Total: 0
+                                          </p>
                                   </div>
                               </div>
 
@@ -356,8 +356,9 @@
                                       <h3>
                                         Business
                                       </h3>
-                                      <p>
-                                      </p>
+																					<p align="right">
+                                              Total: 0
+                                          </p>
                                   </div>
                               </div>
                           </div>
@@ -385,9 +386,9 @@
                                       <h3>
                                         World History
                                       </h3>
-                                      <p>
-
-                                      </p>
+																					<p align="right">
+                                              Total: 0
+                                          </p>
                                   </div>
                               </div>
 
@@ -402,8 +403,8 @@
                                           <h3>
                                             Physics
                                           </h3>
-                                          <p>
-
+																					<p align="right">
+                                              Total: 0
                                           </p>
 
                                       </div>
@@ -418,8 +419,8 @@
                                           <h3>
                                             Chemistry
                                           </h3>
-                                          <p>
-
+																					<p align="right">
+                                              Total: 0
                                           </p>
 
                                       </div>
@@ -434,8 +435,8 @@
                                           <h3>
                                             Literature
                                           </h3>
-                                          <p>
-
+																					<p align="right">
+                                              Total: 0
                                           </p>
                                       </div>
                                   </div>
