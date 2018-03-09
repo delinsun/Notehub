@@ -49,25 +49,17 @@
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <!--
                 <li><a href="register.html">Signup <i class="fa fa-user-plus"></i></a></li>
 
 
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i
                         class="fa fa-user"></i></a>
-
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
                             <div class="row">
                                 <div class="col-md-12">
-                                    Login via
-                                    <div class="social-buttons">
-                                        <button id="loginBtn" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook
-                                        </button>
-                                        <button %href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter
-                                        </button>
-                                    </div>
-                                    or
-                                    <form class="form" role="form" action="Request" name="form1" accept-charset="UTF-8"
+                                    <form class="form" role="form"  name="form1" accept-charset="UTF-8"
                                           id="login-nav">
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
@@ -103,11 +95,12 @@
 
                                     <button onclick="logout()">Logout</button>
                                 </div>
-                                -->
+
                             </div>
                             <div class="bottom text-center">
                                 New here ? <a href="register.html"><b>Join Us</b></a>
                             </div>
+        -->
         </div>
         </li>
         </ul>

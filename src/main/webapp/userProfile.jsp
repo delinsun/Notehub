@@ -34,6 +34,7 @@
     Map<String,String> monthMap = new HashMap<>();
     Map<String,String> tagMap = new HashMap<>();
     ArrayList<String> nameArray = new ArrayList<>();
+
     //tags array
     ArrayList<String> MathArray = new ArrayList<>();
     ArrayList<String> CSArray = new ArrayList<>();
@@ -44,6 +45,17 @@
     ArrayList<String> HistoryArray = new ArrayList<>();
     ArrayList<String> PhysicsArray = new ArrayList<>();
     ArrayList<String> ChemArray = new ArrayList<>();
+
+    //number of files in each tag array
+    int MathSize = 0;
+    int CSSize = 0;
+    int ArtSize = 0;
+    int LitSize = 0;
+    int BusSize = 0;
+    int StatSize = 0;
+    int HistorySize = 0;
+    int PhysicsSize = 0;
+    int ChemSize = 0;
 
     //Get variables
     if (session.getAttribute("email") == null && session.getAttribute("keywordjump") == null) {
@@ -85,6 +97,45 @@
 
     if(session.getAttribute("nameArray") != null){
         nameArray = (ArrayList<String>) session.getAttribute("nameArray");
+    }
+
+    //getting arrays with different tags
+    if(session.getAttribute("ChemArray") != null){
+        ChemArray = (ArrayList<String>) session.getAttribute("ChemArray");
+        ChemSize = ChemArray.size();
+    }
+
+    if(session.getAttribute("PhysicsArray") != null){
+        PhysicsArray = (ArrayList<String>) session.getAttribute("PhysicsArray");
+        PhysicsSize = PhysicsArray.size();
+    }
+    if(session.getAttribute("HistoryArray") != null){
+        HistoryArray = (ArrayList<String>) session.getAttribute("HistoryArray");
+        HistorySize = HistoryArray.size();
+    }
+    if(session.getAttribute("StatArray") != null){
+        StatArray = (ArrayList<String>) session.getAttribute("StatArray");
+        StatSize = StatArray.size();
+    }
+    if(session.getAttribute("BusArray") != null){
+        BusArray = (ArrayList<String>) session.getAttribute("BusArray");
+        BusSize = BusArray.size();
+    }
+    if(session.getAttribute("LitArray") != null){
+        LitArray = (ArrayList<String>) session.getAttribute("LitArray");
+        LitSize = LitArray.size();
+    }
+    if(session.getAttribute("ArtArray") != null){
+        ArtArray = (ArrayList<String>) session.getAttribute("ArtArray");
+        ArtSize = ArtArray.size();
+    }
+    if(session.getAttribute("CSArray") != null){
+        CSArray = (ArrayList<String>) session.getAttribute("CSArray");
+        CSSize = CSArray.size();
+    }
+    if(session.getAttribute("MathArray") != null){
+        MathArray = (ArrayList<String>) session.getAttribute("MathArray");
+        MathSize = MathArray.size();
     }
 
 %>

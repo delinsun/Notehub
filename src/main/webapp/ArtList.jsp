@@ -117,7 +117,7 @@
         MathArray = (ArrayList<String>) session.getAttribute("MathArray");
     }
 
-    if(session.getAttribute("StatArray") == null){
+    if(session.getAttribute("ArtArray") == null){
         response.sendRedirect("userProfile.jsp");
     }
 

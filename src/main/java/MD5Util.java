@@ -1,8 +1,8 @@
 // Available source: https://en.gravatar.com/site/implement/
 
-import java.util.*;
-import java.io.*;
-import java.security.*;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 public class MD5Util {
   public static String hex(byte[] array) {
       StringBuffer sb = new StringBuffer();

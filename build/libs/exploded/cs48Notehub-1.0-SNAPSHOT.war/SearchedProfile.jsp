@@ -119,19 +119,12 @@
                     </div>
                 </form>
             </ul>
+            <!--
             <ul class="nav navbar-nav navbar-right">
                 <ul id="login-dp" class="dropdown-menu">
                     <li>
                         <div class="row">
                             <div class="col-md-12">
-                                Login via
-                                <div class="social-buttons">
-                                    <button id="loginBtn" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook
-                                    </button>
-                                    <button %href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter
-                                    </button>
-                                </div>
-                                or
                                 <form class="form" role="form" action="Request" name="form1" accept-charset="UTF-8"
                                       id="login-div">
                                     <div class="form-group">
@@ -158,7 +151,7 @@
 
 
                             </div>
-                            <!--
+
                             <div id="user_div" class="loggedin-div">
 
                                 <h3>Welcome User</h3>
@@ -167,8 +160,9 @@
 
                                 <button onclick="logout()">Logout</button>
                             </div>
-                            -->
+
                         </div>
+        -->
         </div>
         </li>
         </ul>

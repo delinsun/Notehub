@@ -13,10 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -32,9 +29,20 @@ public class FirstServlet extends HttpServlet {
     DatabaseReference mUserReference;
     DatabaseReference mUserReference2;
     CountDownLatch latch;
+
+    //state of servlet, used to determine when to fetch data back from firebase
+    private State state;
+    boolean userArraygetted = false;
+
+    //Time tasker used to record time
+    TimeTask task;
+
+    //variables used for servlet
+
+    //follower numbers
     int followerNum = 0;
     int followingNum = 0;
-    boolean userArraygetted = false;
+
     //set ArrayList by tag
     ArrayList<String> MathArray = new ArrayList<>();
     ArrayList<String> CSArray = new ArrayList<>();
@@ -45,6 +53,7 @@ public class FirstServlet extends HttpServlet {
     ArrayList<String> HistoryArray = new ArrayList<>();
     ArrayList<String> PhysicsArray = new ArrayList<>();
     ArrayList<String> ChemArray = new ArrayList<>();
+
     //Design an Arraylist to convert the Month from Int to String
     Map<Integer, String> monthConvert = new HashMap<>();
     Map<String, String> descriptionMap = new HashMap<>();
@@ -53,33 +62,19 @@ public class FirstServlet extends HttpServlet {
     Map<String, String> yearMap = new HashMap<>();
     Map<String,String> urlMap = new HashMap<>();
     Map<String,String> dayMap = new HashMap<>();
+
     //pdf names
     ArrayList<String> nameArray = new ArrayList<>();
+
     //user names
     ArrayList<String> userArray = new ArrayList<>();
     Map<String, PDF> pdfs;
     Map<String,String> names;
 
-    //create a list of data for search to search
-    static List<String> datas;
-
-    static {
-        datas = new ArrayList<>();
-        datas.add("delin66668");
-        datas.add("Official_Account");
-        datas.add("Zheren888");
-        datas.add("abc_user");
-        datas.add("szc666");
-        datas.add("Chandra");
-        datas.add("Lebron James");
-        datas.add("Micheal Jordan");
-        datas.add("Messi");
-        datas.add("PeterD");
-        datas.add("Chandana");
-    }
-
     public FirstServlet() {
         super();
+
+        //set up the firebase
         String path = FirstServlet.class.getClassLoader().getResource("ServiceAccount.json").getPath();
         FileInputStream serviceAccount =
                 null;
@@ -88,8 +83,6 @@ public class FirstServlet extends HttpServlet {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-
         FirebaseOptions options = null;
         try {
             options = new FirebaseOptions.Builder()
@@ -99,9 +92,9 @@ public class FirstServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         FirebaseApp.initializeApp(options);
 
+        //set up the monthConvert map
         monthConvert.put(1, "Jan");
         monthConvert.put(2, "Feb");
         monthConvert.put(3, "Mar");
@@ -114,16 +107,37 @@ public class FirstServlet extends HttpServlet {
         monthConvert.put(10, "Oct");
         monthConvert.put(11, "Nov");
         monthConvert.put(12, "Dec");
+
+        //set up the state
+        state = new State();
+
+        //set up time task
+        task = new TimeTask(this);
+        Timer timer = new Timer();
+        timer.schedule(task,0,30000);
     }
 
+    //State design pattern
+    public void request(){
+        this.state.handle(this);
+    }
+
+    //Since we only need to change from one state to another,
+    //but do not need to change it back, so the changeState method have never been used
+    // I just put it here to make the structure of State design pattern more clear
+    public void changeState(State state){
+        this.state = state;
+    }
+
+    //doGet function, since every servlet could only have one doGet function, so it would be pretty long
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-
 
         //set the format
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
+        //Check the request passed in
         if(userArraygetted == false){
             HttpSession session = request.getSession();
             latch = new CountDownLatch(1);
@@ -158,6 +172,7 @@ public class FirstServlet extends HttpServlet {
             }
             userArraygetted = true;
         }
+
         // code for the search
         if (request.getParameter("keyword") != null) {
             String keyword = request.getParameter("keyword");
@@ -185,6 +200,7 @@ public class FirstServlet extends HttpServlet {
             urlMap = new HashMap<>();
             dayMap = new HashMap<>();
             nameArray = new ArrayList<>();
+
             //latch the method to wait for the Firebase
             latch = new CountDownLatch(1);
             String url = request.getParameter("email");
@@ -196,10 +212,10 @@ public class FirstServlet extends HttpServlet {
                 return;
             }
             HttpSession session = request.getSession();
+
             //firebase
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("username/" + username);
-            // firebase
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -273,8 +289,6 @@ public class FirstServlet extends HttpServlet {
                 if (temp.equals("Business"))
                     BusArray.add(tempkey);
             }
-
-
             //Set by session
             session.setAttribute("shared",nameArray.size());
             session.setAttribute("descriptionMap",descriptionMap);
@@ -327,11 +341,13 @@ public class FirstServlet extends HttpServlet {
                 response.sendRedirect("index.jsp");
                 return;
             }
+
+            //Get session
             HttpSession session = request.getSession();
+
             //firebase
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("username/" + username);
-            // firebase
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -406,8 +422,7 @@ public class FirstServlet extends HttpServlet {
                     BusArray.add(tempkey);
             }
 
-
-            //Set by session
+            //Send by session
             session.setAttribute("shared",nameArray.size());
             session.setAttribute("descriptionMap",descriptionMap);
             session.setAttribute("yearMap",yearMap);
@@ -415,7 +430,8 @@ public class FirstServlet extends HttpServlet {
             session.setAttribute("tagMap",tagMap);
             session.setAttribute("urlMap",urlMap);
             session.setAttribute("dayMap",dayMap);
-            //tag array
+
+            //tag arrays
             session.setAttribute("nameArray", nameArray);
             session.setAttribute("MathArray", MathArray);
             session.setAttribute("CSArray", CSArray);
@@ -432,7 +448,12 @@ public class FirstServlet extends HttpServlet {
         }
     }
 
-    //template function to generate a list of words to search
+    //Function to make the servlet ready to fetch data back fron firebase
+    public void OnFetching(){
+        this.userArraygetted = false;
+    }
+
+    //Function to generate the list of words to search
     public List<String> getData(String keyword) {
         List<String> list = new ArrayList<>();
         for (String data : this.userArray) {
@@ -443,6 +464,9 @@ public class FirstServlet extends HttpServlet {
         }
         return list;
     }
+
+    //Function to set a time cycle to the Servlet to fetch data from firebase
+
 }
 
 
