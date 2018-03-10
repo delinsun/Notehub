@@ -17,10 +17,7 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-//说明这个Servlet是没有序列号的
 @SuppressWarnings("serial")
-//说明这个Servlet的名称是ajaxRequest，其地址是/ajaxRequest
-//这与在web.xml中设置是一样的
 @WebServlet("/Request")
 public class FirstServlet extends HttpServlet {
 
@@ -114,7 +111,7 @@ public class FirstServlet extends HttpServlet {
         //set up time task
         task = new TimeTask(this);
         Timer timer = new Timer();
-        timer.schedule(task,0,30000);
+        timer.schedule(task,30000,30000);
     }
 
     //State design pattern
@@ -140,7 +137,7 @@ public class FirstServlet extends HttpServlet {
         //Check the request passed in
         if(userArraygetted == false){
             HttpSession session = request.getSession();
-            latch = new CountDownLatch(1);
+            CountDownLatch latch1 = new CountDownLatch(1);
             mUserReference = FirebaseDatabase.getInstance().getReference("username");
             ValueEventListener postListener = new ValueEventListener() {
                 @Override
@@ -148,21 +145,20 @@ public class FirstServlet extends HttpServlet {
                     // Get Post object and use the values to update the UI
                     names = new HashMap<String, String>((Map<String,String>) dataSnapshot.getValue());
                     session.setAttribute("names",names);
-                    latch.countDown();
+                    latch1.countDown();
                     // ...
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
-                    //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                    latch.countDown();
+                    latch1.countDown();
                     // ...
                 }
             };
             mUserReference.addListenerForSingleValueEvent(postListener);
             try {
-                latch.await(120, TimeUnit.SECONDS);
+                latch1.await(120, TimeUnit.SECONDS);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -181,7 +177,7 @@ public class FirstServlet extends HttpServlet {
         }
 
         //code for login
-        if (request.getParameter("email") != null) {
+        if (request.getParameter("useremail") != null) {
             //renew lists and maps
             MathArray = new ArrayList<>();
             CSArray = new ArrayList<>();
@@ -192,7 +188,6 @@ public class FirstServlet extends HttpServlet {
             HistoryArray = new ArrayList<>();
             PhysicsArray = new ArrayList<>();
             ChemArray = new ArrayList<>();
-            monthConvert = new HashMap<>();
             descriptionMap = new HashMap<>();
             tagMap = new HashMap<>();
             monthMap = new HashMap<>();
@@ -202,8 +197,8 @@ public class FirstServlet extends HttpServlet {
             nameArray = new ArrayList<>();
 
             //latch the method to wait for the Firebase
-            latch = new CountDownLatch(1);
-            String url = request.getParameter("email");
+            CountDownLatch latch2 = new CountDownLatch(1);
+            String url = request.getParameter("useremail");
             String image = MD5Util.getImgURL(url);
             int index = url.indexOf('@');
             String username = url.substring(0, index);
@@ -231,14 +226,14 @@ public class FirstServlet extends HttpServlet {
                             session.setAttribute("followerNum", user.followers.size());
                             session.setAttribute("followingNum", user.following.size());
                             session.setAttribute("username", user.username);
-                            latch.countDown();
+                            latch2.countDown();
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
                             // Getting Post failed, log a message
                             // ...
-                            latch.countDown();
+                            latch2.countDown();
                         }
                     };
                     ref1.addListenerForSingleValueEvent(postListener);
@@ -248,11 +243,11 @@ public class FirstServlet extends HttpServlet {
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
                     // ...
-                    latch.countDown();
+                    latch2.countDown();
                 }
             });
             try {
-                latch.await(120, TimeUnit.SECONDS);
+                latch2.await(120, TimeUnit.SECONDS);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -313,7 +308,7 @@ public class FirstServlet extends HttpServlet {
             response.sendRedirect("userProfile.jsp");
         }
         //code for search jump
-        if (request.getParameter("keywordjump") != null) {
+        if (request.getParameter("SearchedUsername") != null) {
             //renew lists and maps
             MathArray = new ArrayList<>();
             CSArray = new ArrayList<>();
@@ -324,7 +319,6 @@ public class FirstServlet extends HttpServlet {
             HistoryArray = new ArrayList<>();
             PhysicsArray = new ArrayList<>();
             ChemArray = new ArrayList<>();
-            monthConvert = new HashMap<>();
             descriptionMap = new HashMap<>();
             tagMap = new HashMap<>();
             monthMap = new HashMap<>();
@@ -332,13 +326,13 @@ public class FirstServlet extends HttpServlet {
             urlMap = new HashMap<>();
             dayMap = new HashMap<>();
             nameArray = new ArrayList<>();
-            String url = request.getParameter("keywordjump");
+            String url = request.getParameter("SearchedUsername");
             //latch the method to wait for the Firebase
-            latch = new CountDownLatch(1);
+            CountDownLatch latch3 = new CountDownLatch(1);
             String image = MD5Util.getImgURL(url);
             String username = url;
             if(!userArray.contains(username)){
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("SearchedProfile.jsp");
                 return;
             }
 
@@ -363,14 +357,14 @@ public class FirstServlet extends HttpServlet {
                             session.setAttribute("followerNum", user.followers.size());
                             session.setAttribute("followingNum", user.following.size());
                             session.setAttribute("username", user.username);
-                            latch.countDown();
+                            latch3.countDown();
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
                             // Getting Post failed, log a message
                             // ...
-                            latch.countDown();
+                            latch3.countDown();
                         }
                     };
                     ref1.addListenerForSingleValueEvent(postListener);
@@ -380,11 +374,11 @@ public class FirstServlet extends HttpServlet {
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
                     // ...
-                    latch.countDown();
+                    latch3.countDown();
                 }
             });
             try {
-                latch.await(120, TimeUnit.SECONDS);
+                latch3.await(120, TimeUnit.SECONDS);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -443,7 +437,7 @@ public class FirstServlet extends HttpServlet {
             session.setAttribute("PhysicsArray", PhysicsArray);
             session.setAttribute("ChemArray", ChemArray);
             session.setAttribute("image", image);
-            session.setAttribute("keywordjump", url);
+            session.setAttribute("SearchedUsername", url);
             response.sendRedirect("SearchedProfile.jsp");
         }
     }

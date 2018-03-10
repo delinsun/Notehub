@@ -29,10 +29,10 @@
     int followerNum = 0;
     int followingNum = 0;
     int shared = 0;
-    Map<String,String> descriptionMap = new HashMap<>();
-    Map<String,Integer> yearMap = new HashMap<>();
-    Map<String,String> monthMap = new HashMap<>();
-    Map<String,String> tagMap = new HashMap<>();
+    Map<String, String> descriptionMap = new HashMap<>();
+    Map<String, Integer> yearMap = new HashMap<>();
+    Map<String, String> monthMap = new HashMap<>();
+    Map<String, String> tagMap = new HashMap<>();
     ArrayList<String> nameArray = new ArrayList<>();
 
     //tags array
@@ -47,95 +47,95 @@
     ArrayList<String> ChemArray = new ArrayList<>();
 
     //number of files in each tag array
-    int MathSize = 0;
-    int CSSize = 0;
-    int ArtSize = 0;
-    int LitSize = 0;
-    int BusSize = 0;
-    int StatSize = 0;
-    int HistorySize = 0;
-    int PhysicsSize = 0;
-    int ChemSize = 0;
+    String MathSize = "0";
+    String CSSize = "0";
+    String ArtSize = "0";
+    String LitSize = "0";
+    String BusSize = "0";
+    String StatSize = "0";
+    String HistorySize = "0";
+    String PhysicsSize = "0";
+    String ChemSize = "0";
 
     //Get variables
-    if (session.getAttribute("email") == null && session.getAttribute("keywordjump") == null) {
+    if (session.getAttribute("email") == null && session.getAttribute("SearchedUsername") == null) {
         response.sendRedirect("index.jsp");
     }
     profileImageUrl = (String) session.getAttribute("image");
-    if(session.getAttribute("email")!=null) {
+    if (session.getAttribute("email") != null) {
         email = (String) session.getAttribute("email");
         emailName = (String) session.getAttribute("username");
     }
-    if(session.getAttribute("keywordjump")!=null){
-        email = (String) session.getAttribute("keywordjump");
+    if (session.getAttribute("SearchedUsername") != null) {
+        email = (String) session.getAttribute("SearchedUsername");
         emailName = email;
     }
-    if(session.getAttribute("followerNum") != null){
+    if (session.getAttribute("followerNum") != null) {
         followerNum = (int) session.getAttribute("followerNum");
     }
-    if(session.getAttribute("followingNum") != null){
+    if (session.getAttribute("followingNum") != null) {
         followingNum = (int) session.getAttribute("followingNum");
     }
-    if(session.getAttribute("shared") != null)
+    if (session.getAttribute("shared") != null)
         shared = (int) session.getAttribute("shared");
 
-    if(session.getAttribute("descriptionMap") != null){
+    if (session.getAttribute("descriptionMap") != null) {
         descriptionMap = (Map<String, String>) session.getAttribute("descriptionMap");
     }
 
-    if(session.getAttribute("yearMap") != null){
+    if (session.getAttribute("yearMap") != null) {
         yearMap = (Map<String, Integer>) session.getAttribute("yearMap");
     }
 
-    if(session.getAttribute("monthMap") != null){
+    if (session.getAttribute("monthMap") != null) {
         monthMap = (Map<String, String>) session.getAttribute("monthMap");
     }
 
-    if(session.getAttribute("tagMap") != null){
+    if (session.getAttribute("tagMap") != null) {
         tagMap = (Map<String, String>) session.getAttribute("tagMap");
     }
 
-    if(session.getAttribute("nameArray") != null){
+    if (session.getAttribute("nameArray") != null) {
         nameArray = (ArrayList<String>) session.getAttribute("nameArray");
     }
 
     //getting arrays with different tags
-    if(session.getAttribute("ChemArray") != null){
+    if (session.getAttribute("ChemArray") != null) {
         ChemArray = (ArrayList<String>) session.getAttribute("ChemArray");
-        ChemSize = ChemArray.size();
+        ChemSize = String.valueOf(ChemArray.size());
     }
 
-    if(session.getAttribute("PhysicsArray") != null){
+    if (session.getAttribute("PhysicsArray") != null) {
         PhysicsArray = (ArrayList<String>) session.getAttribute("PhysicsArray");
-        PhysicsSize = PhysicsArray.size();
+        PhysicsSize = String.valueOf(PhysicsArray.size());
     }
-    if(session.getAttribute("HistoryArray") != null){
+    if (session.getAttribute("HistoryArray") != null) {
         HistoryArray = (ArrayList<String>) session.getAttribute("HistoryArray");
-        HistorySize = HistoryArray.size();
+        HistorySize = String.valueOf(HistoryArray.size());
     }
-    if(session.getAttribute("StatArray") != null){
+    if (session.getAttribute("StatArray") != null) {
         StatArray = (ArrayList<String>) session.getAttribute("StatArray");
-        StatSize = StatArray.size();
+        StatSize = String.valueOf(StatArray.size());
     }
-    if(session.getAttribute("BusArray") != null){
+    if (session.getAttribute("BusArray") != null) {
         BusArray = (ArrayList<String>) session.getAttribute("BusArray");
-        BusSize = BusArray.size();
+        BusSize = String.valueOf(BusArray.size());
     }
-    if(session.getAttribute("LitArray") != null){
+    if (session.getAttribute("LitArray") != null) {
         LitArray = (ArrayList<String>) session.getAttribute("LitArray");
-        LitSize = LitArray.size();
+        LitSize = String.valueOf(LitArray.size());
     }
-    if(session.getAttribute("ArtArray") != null){
+    if (session.getAttribute("ArtArray") != null) {
         ArtArray = (ArrayList<String>) session.getAttribute("ArtArray");
-        ArtSize = ArtArray.size();
+        ArtSize = String.valueOf(ArtArray.size());
     }
-    if(session.getAttribute("CSArray") != null){
+    if (session.getAttribute("CSArray") != null) {
         CSArray = (ArrayList<String>) session.getAttribute("CSArray");
-        CSSize = CSArray.size();
+        CSSize = String.valueOf(CSArray.size());
     }
-    if(session.getAttribute("MathArray") != null){
+    if (session.getAttribute("MathArray") != null) {
         MathArray = (ArrayList<String>) session.getAttribute("MathArray");
-        MathSize = MathArray.size();
+        MathSize = String.valueOf(MathArray.size());
     }
 
 %>
@@ -158,7 +158,8 @@
                 <li><a href="#about">About</a></li>
                 <form class="navbar-form navbar-left" role="search" action="Request">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword" name="keywordjump"
+                        <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword"
+                               name="SearchedUsername"
                                onkeyup="getMoreContents()" onblur="keywordBlur()" onfocus="getMoreContents()">
                         <div id="popDiv">
                             <table id="content_table" bgcolor="black" border="0" cellspacing="0" cellpadding="0">
@@ -276,10 +277,12 @@
                             class="">Shares</strong></span> <%=shared%>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Following</strong></span> <a href="follow.html"><%=followingNum%></a>
+                            class="">Following</strong></span> <a href="follow.html"><%=followingNum%>
+                    </a>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Followers</strong></span> <a href="follow.html"><%=followerNum%></a>
+                            class="">Followers</strong></span> <a href="follow.html"><%=followerNum%>
+                    </a>
                     </li>
                 </ul>
                 <div class="panel panel-default">
@@ -300,31 +303,32 @@
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <a href="MathList.jsp">
-                                        <img alt="300x200" src="http://study.com/cimages/course-image/linear-algebra-syllabus-lesson-plans_175046_large.jpg">
+                                        <img alt="300x200"
+                                             src="http://study.com/cimages/course-image/linear-algebra-syllabus-lesson-plans_175046_large.jpg">
                                     </a>
                                     <div class="caption">
                                         <h3>
                                             Mathematics
                                         </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
-
+                                        <p align="right">
+                                            <%="Total: " + MathSize%>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <a href="CSList.jsp">
-                                        <img alt="300x200" src="https://cdn-images-1.medium.com/max/2000/1*LgaStRUic1JjYfhdYplClg.jpeg">
+                                        <img alt="300x200"
+                                             src="https://cdn-images-1.medium.com/max/2000/1*LgaStRUic1JjYfhdYplClg.jpeg">
                                     </a>
                                     <div class="caption">
                                         <h3>
                                             Computer Science
                                         </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                        <p align="right">
+                                            <%="Total: " + CSSize%>
+                                        </p>
 
                                     </div>
                                 </div>
@@ -332,15 +336,16 @@
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <a href="ArtList.jsp">
-                                        <img alt="300x200" src="https://axerosolutions.com/attachment?file=UZkB7AwtFeOsAZEgxrSeAg%3D%3D">
+                                        <img alt="300x200"
+                                             src="https://axerosolutions.com/attachment?file=UZkB7AwtFeOsAZEgxrSeAg%3D%3D">
                                     </a>
                                     <div class="caption">
                                         <h3>
                                             Art & Music
                                         </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                        <p align="right">
+                                            <%="Total: " + ArtSize%>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -351,46 +356,49 @@
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <a href="BusList.jsp">
-                                        <img alt="300x200" src="https://salespop.pipelinersales.com/wp-content/uploads/2014/04/the-benefit-of-web-services-to-a-crm-software.jpg">
+                                        <img alt="300x200"
+                                             src="https://salespop.pipelinersales.com/wp-content/uploads/2014/04/the-benefit-of-web-services-to-a-crm-software.jpg">
                                     </a>
                                     <div class="caption">
                                         <h3>
                                             Business
                                         </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                        <p align="right">
+                                            <%="Total: " + BusSize%>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <a href="StatList.jsp">
-                                        <img alt="300x200" src="https://cdn.lynda.com/course/503930/503930-636173965766935316-16x9.jpg">
+                                        <img alt="300x200"
+                                             src="https://cdn.lynda.com/course/503930/503930-636173965766935316-16x9.jpg">
                                     </a>
                                     <div class="caption">
                                         <h3>
                                             Statistical Science
                                         </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                        <p align="right">
+                                            <%="Total: " + StatSize%>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
                                     <a href="HistoryList.jsp">
-                                        <img alt="300x200" src="http://study.com/cimages/course-image/virginia-sol-world-history-geography-to-1500-test-prep-practice_217975_large.jpg">
+                                        <img alt="300x200"
+                                             src="http://study.com/cimages/course-image/virginia-sol-world-history-geography-to-1500-test-prep-practice_217975_large.jpg">
                                     </a>
                                     <div class="caption">
 
                                         <h3>
                                             World History
                                         </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                        <p align="right">
+                                            <%="Total: " + HistorySize%>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -399,15 +407,16 @@
                                 <div class="col-md-4">
                                     <div class="thumbnail">
                                         <a href="PhysicsList.jsp">
-                                            <img alt="300x200" src="https://urbangeekz.com/wp-content/uploads/2015/10/Not-Rocket-Science-How-to-Uncomplicate-Your-Business-Model-837x480.jpg">
+                                            <img alt="300x200"
+                                                 src="https://urbangeekz.com/wp-content/uploads/2015/10/Not-Rocket-Science-How-to-Uncomplicate-Your-Business-Model-837x480.jpg">
                                         </a>
                                         <div class="caption">
                                             <h3>
                                                 Physics
                                             </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                            <p align="right">
+                                                <%="Total: " + PhysicsSize%>
+                                            </p>
 
                                         </div>
                                     </div>
@@ -415,15 +424,16 @@
                                 <div class="col-md-4">
                                     <div class="thumbnail">
                                         <a href="ChemList.jsp">
-                                            <img alt="300x200" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fa/6926005ea411e490ff8d4c5d4ff426/chemistry_logo.png">
+                                            <img alt="300x200"
+                                                 src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fa/6926005ea411e490ff8d4c5d4ff426/chemistry_logo.png">
                                         </a>
                                         <div class="caption">
                                             <h3>
                                                 Chemistry
                                             </h3>
- 																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                            <p align="right">
+                                                <%="Total: " + ChemSize%>
+                                            </p>
 
                                         </div>
                                     </div>
@@ -431,22 +441,23 @@
                                 <div class="col-md-4">
                                     <div class="thumbnail">
                                         <a href="LitList.jsp">
-                                            <img alt="300x200" src="http://radon-mclean.org/wp-content/uploads/sites/82/2016/07/Literature-and-Novels.jpg">
+                                            <img alt="300x200"
+                                                 src="http://radon-mclean.org/wp-content/uploads/sites/82/2016/07/Literature-and-Novels.jpg">
                                         </a>
                                         <div class="caption">
                                             <h3>
                                                 Literature
                                             </h3>
-																					<p align="right">
-                                              Total: 0
-                                          </p>
+                                            <p align="right">
+                                                <%="Total: " + LitSize%>
+                                            </p>
                                         </div>
                                     </div>
 
                                 </div>
 
                             </div>
-                            <div align = "right"><a href="repository.html">Show all    <i class="fa fa-plus"></i></a></div>
+                            <div align="right"><a href="repository.html">Show all <i class="fa fa-plus"></i></a></div>
                         </div>
                     </div>
                 </div>

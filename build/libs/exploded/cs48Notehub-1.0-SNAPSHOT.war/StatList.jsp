@@ -139,17 +139,9 @@
                 <li class="active"><a href="#">Home</a></li>
                 <!--li><a href="#search">Search</a></li-->
                 <li><a href="#about">About</a></li>
-                <form class="navbar-form navbar-left" role="search" action="Request">
+                <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword" name="keywordjump"
-                               onkeyup="getMoreContents()" onblur="keywordBlur()" onfocus="getMoreContents()">
-                        <div id="popDiv">
-                            <table id="content_table" bgcolor="black" border="0" cellspacing="0" cellpadding="0">
-                                <tbody id="content_table_body">
-                                <!--how to show the search result-->
-                                </tbody>
-                            </table>
-                        </div>
+                        <input type="text" class="form-control" placeholder="Search NoteHub">
                     </div>
                 </form>
             </ul>
