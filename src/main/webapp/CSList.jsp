@@ -12,6 +12,7 @@
         type="text/css">
   <link rel="stylesheet" type="text/css" href="css/pdfList.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script type="text/javascript" src="js/search.js"></script>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
@@ -139,9 +140,17 @@
         <li class="active"><a href="#">Home</a></li>
         <!--li><a href="#search">Search</a></li-->
         <li><a href="https://github.com/delinsun/Notehub">About</a></li>
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" action="Request">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search NoteHub">
+            <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword" name="SearchedUsername"
+                   onkeyup="getMoreContents()" onblur="keywordBlur()" onfocus="getMoreContents()">
+            <div id="popDiv">
+              <table id="content_table" style = "color:white" bgcolor="black" border="0" cellspacing="0" cellpadding="0">
+                <tbody id="content_table_body">
+                <!--how to show the search result-->
+                </tbody>
+              </table>
+            </div>
           </div>
         </form>
       </ul>
