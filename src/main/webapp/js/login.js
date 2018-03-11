@@ -26,9 +26,6 @@
         const promise = auth.signInWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
         promise.catch(e => alert(e.message));
-
-        //Just for test
-        window.location.href = "Request?useremail="+email;
     });
 
     /*

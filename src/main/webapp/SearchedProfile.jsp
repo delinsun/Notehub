@@ -79,7 +79,7 @@
         followingNum = (int) session.getAttribute("followingNum");
     }
     if (session.getAttribute("shared") != null)
-        shared = (int) session.getAttribute("shared");
+        shared = (int) session.getAttribute("shared") - 1;
 
     if (session.getAttribute("descriptionMap") != null) {
         descriptionMap = (Map<String, String>) session.getAttribute("descriptionMap");
