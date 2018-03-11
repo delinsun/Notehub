@@ -23,7 +23,7 @@
 <body>
 <%
     //variables initialization
-    String profileImageUrl;
+    String profileImageUrl = "";
     String email = "";
     String emailName = "";
     int followerNum = 0;
@@ -58,17 +58,13 @@
     String ChemSize = "0";
 
     //Get variables
-    if (session.getAttribute("email") == null && session.getAttribute("SearchedUsername") == null) {
+    if (session.getAttribute("email") == null) {
         response.sendRedirect("index.jsp");
     }
-    profileImageUrl = (String) session.getAttribute("image");
-    if (session.getAttribute("email") != null) {
+    else if (session.getAttribute("email") != null) {
         email = (String) session.getAttribute("email");
         emailName = (String) session.getAttribute("username");
-    }
-    if (session.getAttribute("SearchedUsername") != null) {
-        email = (String) session.getAttribute("SearchedUsername");
-        emailName = email;
+        profileImageUrl = (String) session.getAttribute("image");
     }
     if (session.getAttribute("followerNum") != null) {
         followerNum = (int) session.getAttribute("followerNum");
@@ -155,7 +151,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <!--li><a href="#search">Search</a></li-->
-                <li><a href="#about">About</a></li>
+                <li><a href="https://github.com/delinsun/Notehub">About</a></li>
                 <form class="navbar-form navbar-left" role="search" action="Request">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword"
@@ -172,8 +168,7 @@
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.jsp">logout <i class="fa fa-sign-out"></i></a></li>
-
+                <li><a id = "btnLogout" href="index.jsp?logout=true">logout <i class="fa fa-sign-out"></i></a></li>
                 <ul id="login-dp" class="dropdown-menu">
                     <li>
                         <div class="row">
@@ -255,22 +250,11 @@
             <div class="col-sm-3">
                 <!--left col-->
                 <ul class="list-group">
-                    <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Joined</strong></span> 2.13.2018
-                    </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Last seen</strong></span> Yesterday
-                    </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Real name</strong></span> <%=emailName%>
-                    </li>
-                </ul>
-
-
-                <ul class="list-group">
                     <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i>
 
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong
+                            class="">Email</strong></span> <%=email%>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
                             class="">Shares</strong></span> <%=shared%>
@@ -284,14 +268,6 @@
                     </a>
                     </li>
                 </ul>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Social Media</div>
-                    <div class="panel-body"><i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i>
-                        <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i
-                                class="fa fa-google-plus fa-2x"></i>
-
-                    </div>
-                </div>
             </div>
             <!--/col-3-->
             <div class="col-sm-9" style="" contenteditable="false">
@@ -457,7 +433,6 @@
                                 </div>
 
                             </div>
-                            <div align="right"><a href="repository.html">Show all <i class="fa fa-plus"></i></a></div>
                         </div>
                     </div>
                 </div>

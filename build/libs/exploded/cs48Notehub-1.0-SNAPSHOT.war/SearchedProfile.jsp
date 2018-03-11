@@ -16,16 +16,16 @@
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
           type="text/css">
-
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript" src="js/search.js"></script>
 </head>
 <body>
 <%
     //variables initialization
-    String profileImageUrl;
+    String profileImageUrl = "";
     String email = "";
     String emailName = "";
+    String username = "";
     int followerNum = 0;
     int followingNum = 0;
     int shared = 0;
@@ -58,17 +58,19 @@
     String ChemSize = "0";
 
     //Get variables
-    if (session.getAttribute("email") == null && session.getAttribute("SearchedUsername") == null) {
+    if (session.getAttribute("SearchedUsername") == null) {
         response.sendRedirect("index.jsp");
     }
-    profileImageUrl = (String) session.getAttribute("image");
-    if (session.getAttribute("email") != null) {
+    if (session.getAttribute("SearchedUsername") != null) {
+        email = (String) session.getAttribute("email");
+        emailName = (String) session.getAttribute("SearchedUsername");
+        profileImageUrl = (String) session.getAttribute("image");
+    } else if (session.getAttribute("email") != null && session.getAttribute("SearchedUsername") == null) {
         email = (String) session.getAttribute("email");
         emailName = (String) session.getAttribute("username");
     }
-    if (session.getAttribute("SearchedUsername") != null) {
-        email = (String) session.getAttribute("SearchedUsername");
-        emailName = email;
+    if(session.getAttribute("username") != null){
+        username = (String) session.getAttribute("username");
     }
     if (session.getAttribute("followerNum") != null) {
         followerNum = (int) session.getAttribute("followerNum");
@@ -140,6 +142,7 @@
 
 %>
 <nav class="navbar navbar-default navbar-fixed-top">
+
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -149,13 +152,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">NoteHub</a>
+            <a class="navbar-brand" href="index.jsp">NoteHub</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <% if(username != ""){
+                %>
+                <li class="active"><a href="userProfile.jsp">Home</a></li>
+                <% }
+                else{
+                %><li class="active"><a href="login.html">Home</a></li>
+                <%}
+                %>
                 <!--li><a href="#search">Search</a></li-->
-                <li><a href="#about">About</a></li>
+                <li><a href="https://github.com/delinsun/Notehub">About</a></li>
                 <form class="navbar-form navbar-left" role="search" action="Request">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword"
@@ -232,29 +242,27 @@
     </div>
 </nav>
 
+<!--left col
 <div class="container">
     <hr class="">
     <div id="mainProfile" class="container target">
         <div class="row">
             <div class="col-sm-10">
-                <h1 id="bigName" class=""><%=emailName%>
+                <h1 id="bigName" class="">TestName
                 </h1>
-
-                <button type="button" class="btn btn-success">Follow me!</button>
-                <button type="button" class="btn btn-info">Send me an email</button>
 
                 <br>
             </div>
             <div class="col-sm-2">
                 <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive"
-                                                         src=<%=profileImageUrl%>></a>
+                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mao_Zedong_portrait.jpg/220px-Mao_Zedong_portrait.jpg"></a>
 
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-sm-3">
-                <!--left col-->
+
                 <ul class="list-group">
                     <li class="list-group-item text-muted" contenteditable="false">Profile</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
@@ -264,7 +272,7 @@
                             class="">Last seen</strong></span> Yesterday
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Real name</strong></span> <%=emailName%>
+                            class="">Real name</strong></span> asdasdas
                     </li>
                 </ul>
 
@@ -274,16 +282,24 @@
 
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Shares</strong></span> <%=shared%>
+                            class="">Shares</strong></span> 125
                     </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Following</strong></span> <a href="follow.html"><%=followingNum%>
-                    </a>
+                    <li class="list-group-item text-right">
+                        <span class="pull-left"><strong class="">Following</strong></span>
+                        <a class="dropdown-toggle" data-toggle="dropdown">12 </a>
+                        <ul id="follow-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>user1</p>
+                                        <p>user2</p>
+                                        <p>user3</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Followers</strong></span> <a href="follow.html"><%=followerNum%>
-                    </a>
-                    </li>
+
                 </ul>
                 <div class="panel panel-default">
                     <div class="panel-heading">Social Media</div>
@@ -294,6 +310,78 @@
                     </div>
                 </div>
             </div>
+            -->
+<!--left col-->
+<div class="container">
+    <hr class="">
+    <div id="mainProfile" class="container target">
+        <div class="row">
+            <div class="col-sm-10">
+                <h1 id="bigName" class=""><%=emailName%>
+                </h1>
+
+                <a href="Request?followme=true">
+                    <button type="button" class="btn btn-success">Follow me!</button>
+                </a>
+
+                <br>
+            </div>
+            <div class="col-sm-2">
+                <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive"
+                                                         src=<%=profileImageUrl%>></a>
+
+            </div>
+        </div>
+        <br>
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i>
+
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong
+                            class="">Email</strong></span> <%=email%>
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong
+                            class="">Shares</strong></span> <%=shared%>
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong
+                            class="">Following</strong></span>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><%=followerNum%>
+                        </a>
+                        <ul id="follow-dp-following" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>user1</p>
+                                        <p>user2</p>
+                                        <p>user3</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong
+                            class="">Followers</strong></span>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><%=followerNum%>
+                        </a>
+                        <ul id="follow-dp-follower" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>user1</p>
+                                        <p>user2</p>
+                                        <p>user3</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
             <!--/col-3-->
             <div class="col-sm-9" style="" contenteditable="false">
                 <div class="panel panel-default target">
@@ -457,7 +545,6 @@
                                 </div>
 
                             </div>
-                            <div align="right"><a href="repository.html">Show all <i class="fa fa-plus"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -790,7 +877,7 @@
 <script src="js/firebase.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/  -app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>

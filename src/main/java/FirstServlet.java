@@ -22,51 +22,67 @@ import java.util.concurrent.TimeUnit;
 public class FirstServlet extends HttpServlet {
 
     //Firebase variables
-    DatabaseReference mDatabase;
-    DatabaseReference mUserReference;
-    DatabaseReference mUserReference2;
-    CountDownLatch latch;
+    private DatabaseReference mDatabase;
+    private DatabaseReference mUserReference;
+    private DatabaseReference mUserReference2;
+    private CountDownLatch latch;
 
     //state of servlet, used to determine when to fetch data back from firebase
     private State state;
-    boolean userArraygetted = false;
+    private boolean userArraygetted = false;
 
     //Time tasker used to record time
-    TimeTask task;
+    private TimeTask task;
 
     //variables used for servlet
 
     //follower numbers
-    int followerNum = 0;
-    int followingNum = 0;
+    private int followerNum = 0;
+    private int followingNum = 0;
 
     //set ArrayList by tag
-    ArrayList<String> MathArray = new ArrayList<>();
-    ArrayList<String> CSArray = new ArrayList<>();
-    ArrayList<String> ArtArray = new ArrayList<>();
-    ArrayList<String> LitArray = new ArrayList<>();
-    ArrayList<String> BusArray = new ArrayList<>();
-    ArrayList<String> StatArray = new ArrayList<>();
-    ArrayList<String> HistoryArray = new ArrayList<>();
-    ArrayList<String> PhysicsArray = new ArrayList<>();
-    ArrayList<String> ChemArray = new ArrayList<>();
+    private ArrayList<String> MathArray = new ArrayList<>();
+    private ArrayList<String> CSArray = new ArrayList<>();
+    private ArrayList<String> ArtArray = new ArrayList<>();
+    private ArrayList<String> LitArray = new ArrayList<>();
+    private ArrayList<String> BusArray = new ArrayList<>();
+    private ArrayList<String> StatArray = new ArrayList<>();
+    private ArrayList<String> HistoryArray = new ArrayList<>();
+    private ArrayList<String> PhysicsArray = new ArrayList<>();
+    private ArrayList<String> ChemArray = new ArrayList<>();
 
     //Design an Arraylist to convert the Month from Int to String
-    Map<Integer, String> monthConvert = new HashMap<>();
-    Map<String, String> descriptionMap = new HashMap<>();
-    Map<String, String> tagMap = new HashMap<>();
-    Map<String, String> monthMap = new HashMap<>();
-    Map<String, String> yearMap = new HashMap<>();
-    Map<String,String> urlMap = new HashMap<>();
-    Map<String,String> dayMap = new HashMap<>();
+    private Map<Integer, String> monthConvert = new HashMap<>();
+    private Map<String, String> descriptionMap = new HashMap<>();
+    private Map<String, String> tagMap = new HashMap<>();
+    private Map<String, String> monthMap = new HashMap<>();
+    private Map<String, String> yearMap = new HashMap<>();
+    private Map<String,String> urlMap = new HashMap<>();
+    private Map<String,String> dayMap = new HashMap<>();
+
+    //Arrays used for follower following
+    private ArrayList<String> followerArray = new ArrayList<>();
+    private ArrayList<String> followingArray = new ArrayList<>();
+    private ArrayList<String> followerUrlArray = new ArrayList<>();
+    private ArrayList<String> followingUrlArray = new ArrayList<>();
+
+    //Arrays for search pdf
+    private ArrayList<String> SearchArray = new ArrayList<>();
+    private ArrayList<String> SearchDesArray = new ArrayList<>();
+    private ArrayList<String> SearchMonthArray = new ArrayList<>();
+    private ArrayList<String> SearchYearArray = new ArrayList<>();
+    private ArrayList<String> SearchDayArray = new ArrayList<>();
+    private ArrayList<String> SearchUrlArray = new ArrayList<>();
+    private ArrayList<String> SearchUserArray = new ArrayList<>();
 
     //pdf names
-    ArrayList<String> nameArray = new ArrayList<>();
+    private ArrayList<String> nameArray = new ArrayList<>();
 
     //user names
-    ArrayList<String> userArray = new ArrayList<>();
-    Map<String, PDF> pdfs;
-    Map<String,String> names;
+    private ArrayList<String> userArray = new ArrayList<>();
+    private Map<String, PDF> pdfs;
+    private Map<String,String> names;
+    ArrayList<Map.Entry<Map,String>> namelists = new ArrayList<Map.Entry<Map, String>>();
 
     public FirstServlet() {
         super();
@@ -135,8 +151,10 @@ public class FirstServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         //Check the request passed in
-        if(userArraygetted == false){
+        if(!userArraygetted){
             HttpSession session = request.getSession();
+
+            //code to get all the usernames
             CountDownLatch latch1 = new CountDownLatch(1);
             mUserReference = FirebaseDatabase.getInstance().getReference("username");
             ValueEventListener postListener = new ValueEventListener() {
@@ -148,7 +166,6 @@ public class FirstServlet extends HttpServlet {
                     latch1.countDown();
                     // ...
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
@@ -162,7 +179,71 @@ public class FirstServlet extends HttpServlet {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            //Code to get the all the pdfs
+            CountDownLatch latch11 = new CountDownLatch(1);
+            mUserReference = FirebaseDatabase.getInstance().getReference("users");
+            postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    Map<String,Object> searchnames = new HashMap<String, Object>((Map<String,Object>) dataSnapshot.getValue());
+                    session.setAttribute("searchnames",searchnames);
+                    latch11.countDown();
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    latch11.countDown();
+                }
+            };
+            mUserReference.addListenerForSingleValueEvent(postListener);
+            try {
+                latch11.await(120, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            Map<String,Map> searchnames = (Map<String,Map>)session.getAttribute("searchnames");
+            namelists = new ArrayList<Map.Entry<Map, String>>();
+
+            for (Map.Entry<String, Map> entry: searchnames.entrySet()){
+                Map singleUser = (Map) entry.getValue();
+                Map<String,Object> test = new HashMap<String, Object>((Map<String,Object>)singleUser.get("pdfs"));
+                for (Map.Entry<String,Object> entry1: test.entrySet()){
+                    Map singlePdf = (Map) entry1.getValue();
+                    namelists.add(new AbstractMap.SimpleEntry<Map, String>(singlePdf,(String) singleUser.get("username")));
+                }
+            }
+
+            SearchArray = new ArrayList<>();
+            SearchUserArray = new ArrayList<>();
+            SearchDesArray = new ArrayList<>();
+            SearchMonthArray = new ArrayList<>();
+            SearchYearArray = new ArrayList<>();
+            SearchDayArray = new ArrayList<>();
+            SearchUrlArray = new ArrayList<>();
+
+            for (int i=0;i<namelists.size();i++){
+                SearchArray.add((String) namelists.get(i).getKey().get("filename"));
+                SearchUserArray.add((String) namelists.get(i).getValue());
+                SearchDesArray.add((String) namelists.get(i).getKey().get("description"));
+                String monthNum = String.valueOf(namelists.get(i).getKey().get("month"));
+                SearchMonthArray.add((String) monthConvert.get(Integer.parseInt(monthNum)));
+                SearchYearArray.add((String) String.valueOf(namelists.get(i).getKey().get("year")));
+                SearchDayArray.add((String) String.valueOf(namelists.get(i).getKey().get("day")));
+                SearchUrlArray.add((String) namelists.get(i).getKey().get("url"));
+            }
+            session.setAttribute("SearchArray",SearchArray);
+            session.setAttribute("SearchUserArray",SearchUserArray);
+            session.setAttribute("SearchDesArray",SearchDesArray);
+            session.setAttribute("SearchMonthArray",SearchMonthArray);
+            session.setAttribute("SearchYearArray",SearchYearArray);
+            session.setAttribute("SearchDayArray",SearchDayArray);
+            session.setAttribute("SearchUrlArray",SearchUrlArray);
+
             names = (Map<String, String>) session.getAttribute("names");
+            //userArray = new ArrayList<String>();
             for (Map.Entry<String,String> entry: names.entrySet()){
                 userArray.add(entry.getKey());
             }
@@ -195,18 +276,52 @@ public class FirstServlet extends HttpServlet {
             urlMap = new HashMap<>();
             dayMap = new HashMap<>();
             nameArray = new ArrayList<>();
+            followerArray = new ArrayList<>();
+            followingArray = new ArrayList<>();
+            followerUrlArray = new ArrayList<>();
+            followingUrlArray = new ArrayList<>();
+
+            HttpSession session = request.getSession();
 
             //latch the method to wait for the Firebase
             CountDownLatch latch2 = new CountDownLatch(1);
             String url = request.getParameter("useremail");
             String image = MD5Util.getImgURL(url);
-            int index = url.indexOf('@');
-            String username = url.substring(0, index);
-            if(!userArray.contains(username)){
-                response.sendRedirect("index.jsp");
-                return;
+            String username = "";
+
+            //Get username by email
+            CountDownLatch latch22 = new CountDownLatch(1);
+            mUserReference = FirebaseDatabase.getInstance().getReference("users");
+            ValueEventListener postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    Map<String,Object> searchnames = new HashMap<String, Object>((Map<String,Object>) dataSnapshot.getValue());
+                    session.setAttribute("searchnames",searchnames);
+                    latch22.countDown();
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    latch22.countDown();
+                }
+            };
+            mUserReference.addListenerForSingleValueEvent(postListener);
+            try {
+                latch22.await(120, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            HttpSession session = request.getSession();
+            Map<String,Map> searchnames = (Map<String,Map>)session.getAttribute("searchnames");
+            namelists = new ArrayList<Map.Entry<Map, String>>();namelists = new ArrayList<Map.Entry<Map, String>>();
+
+            for (Map.Entry<String,Map> entry: searchnames.entrySet()){
+                Map singleUser = (Map) entry.getValue();
+                String test = ((String)singleUser.get("email"));
+                if (test.equals(url)){
+                    username = (String)singleUser.get("username");
+                }
+            }
 
             //firebase
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -223,6 +338,7 @@ public class FirstServlet extends HttpServlet {
                             User user = dataSnapshot.getValue(User.class);
                             pdfs = user.pdfs;
                             session.setAttribute("pdfs",pdfs);
+                            session.setAttribute("user",user);
                             session.setAttribute("followerNum", user.followers.size());
                             session.setAttribute("followingNum", user.following.size());
                             session.setAttribute("username", user.username);
@@ -252,6 +368,7 @@ public class FirstServlet extends HttpServlet {
                 e.printStackTrace();
             }
             pdfs = (Map<String, PDF>) session.getAttribute("pdfs");
+            User user = (User) session.getAttribute("user");
             for (Map.Entry<String, PDF> entry : pdfs.entrySet()) {
                 PDF pdf = (PDF) entry.getValue();
                 descriptionMap.put(entry.getKey(),pdf.description);
@@ -261,6 +378,16 @@ public class FirstServlet extends HttpServlet {
                 dayMap.put(entry.getKey(), String.valueOf(pdf.day));
                 urlMap.put(entry.getKey(),pdf.url);
                 nameArray.add(entry.getKey());
+            }
+            for (Map.Entry<String, Object> entry : user.followers.entrySet()) {
+                String followerName = String.valueOf(entry.getValue());
+                followerArray.add(followerName);
+                followerUrlArray.add(MD5Util.getImgURL(followerName));
+            }
+            for (Map.Entry<String, Object> entry : user.following.entrySet()) {
+                String followingName = String.valueOf(entry.getValue());
+                followingArray.add(followingName);
+                followingUrlArray.add(MD5Util.getImgURL(followingName));
             }
             for (Map.Entry<String, String> entry : tagMap.entrySet()) {
                 String temp = (String) entry.getValue();
@@ -292,6 +419,7 @@ public class FirstServlet extends HttpServlet {
             session.setAttribute("tagMap",tagMap);
             session.setAttribute("dayMap",dayMap);
             session.setAttribute("urlMap",urlMap);
+
             //tag array
             session.setAttribute("nameArray", nameArray);
             session.setAttribute("MathArray", MathArray);
@@ -303,6 +431,10 @@ public class FirstServlet extends HttpServlet {
             session.setAttribute("HistoryArray", HistoryArray);
             session.setAttribute("PhysicsArray", PhysicsArray);
             session.setAttribute("ChemArray", ChemArray);
+            session.setAttribute("followerArray",followerArray);
+            session.setAttribute("followingArray",followingArray);
+            session.setAttribute("followerUrlArray",followerUrlArray);
+            session.setAttribute("followingUrlArray",followingArray);
             session.setAttribute("image", image);
             session.setAttribute("email", url);
             response.sendRedirect("userProfile.jsp");
@@ -326,16 +458,26 @@ public class FirstServlet extends HttpServlet {
             urlMap = new HashMap<>();
             dayMap = new HashMap<>();
             nameArray = new ArrayList<>();
+            followerArray = new ArrayList<>();
+            followingArray = new ArrayList<>();
+            followerUrlArray = new ArrayList<>();
+            followingUrlArray = new ArrayList<>();
             String url = request.getParameter("SearchedUsername");
             //latch the method to wait for the Firebase
             CountDownLatch latch3 = new CountDownLatch(1);
-            String image = MD5Util.getImgURL(url);
             String username = url;
-            if(!userArray.contains(username)){
+            /*
+            if(!userArray.contains(username)&&(!SearchArray.contains(username))){
                 response.sendRedirect("SearchedProfile.jsp");
                 return;
             }
-
+            */
+            if(!userArray.contains(username)){
+                response.sendRedirect("SearchedList.jsp");
+                HttpSession session = request.getSession();
+                session.setAttribute("Searchedkeyword", username);
+                return;
+            }
             //Get session
             HttpSession session = request.getSession();
 
@@ -354,9 +496,9 @@ public class FirstServlet extends HttpServlet {
                             User user = dataSnapshot.getValue(User.class);
                             pdfs = user.pdfs;
                             session.setAttribute("pdfs",pdfs);
+                            session.setAttribute("user",user);
                             session.setAttribute("followerNum", user.followers.size());
                             session.setAttribute("followingNum", user.following.size());
-                            session.setAttribute("username", user.username);
                             latch3.countDown();
                         }
 
@@ -382,6 +524,7 @@ public class FirstServlet extends HttpServlet {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            User user = (User) session.getAttribute("user");
             pdfs = (Map<String, PDF>) session.getAttribute("pdfs");
             for (Map.Entry<String, PDF> entry : pdfs.entrySet()) {
                 PDF pdf = (PDF) entry.getValue();
@@ -393,6 +536,14 @@ public class FirstServlet extends HttpServlet {
                 dayMap.put(entry.getKey(), String.valueOf(pdf.day));
                 nameArray.add(entry.getKey());
             }
+            for (Map.Entry<String, Object> entry : user.followers.entrySet()) {
+                followerArray.add(String.valueOf(entry.getValue()));
+            }
+            for (Map.Entry<String, Object> entry : user.following.entrySet()) {
+                followingArray.add(String.valueOf(entry.getValue()));
+            }
+            String email = user.email;
+            String image = MD5Util.getImgURL(email);
             for (Map.Entry<String, String> entry : tagMap.entrySet()) {
                 String temp = (String) entry.getValue();
                 String tempkey = (String) entry.getKey();
@@ -436,8 +587,34 @@ public class FirstServlet extends HttpServlet {
             session.setAttribute("HistoryArray", HistoryArray);
             session.setAttribute("PhysicsArray", PhysicsArray);
             session.setAttribute("ChemArray", ChemArray);
+            session.setAttribute("followerArray",followerArray);
+            session.setAttribute("followingArray",followingArray);
+            session.setAttribute("followerUrlArray",followerUrlArray);
+            session.setAttribute("followingUrlArray",followingArray);
+            session.setAttribute("email",email);
             session.setAttribute("image", image);
             session.setAttribute("SearchedUsername", url);
+            response.sendRedirect("SearchedProfile.jsp");
+        }
+
+        //log out
+        if(request.getParameter("logout") != null){
+            HttpSession session = request.getSession();
+            if(session.getAttribute("username") != null) {
+                session.removeAttribute("username");
+            }
+            response.sendRedirect("index.jsp");
+        }
+
+        //follow me
+        if(request.getParameter("followme") != null){
+            HttpSession session = request.getSession();
+            if(session.getAttribute("username") == null) {
+                response.sendRedirect("login.html");
+                return;
+            }
+            int result = add_follower((String)session.getAttribute("username"),(String)session.getAttribute("SearchedUsername"));
+            response.getWriter().print("<script> alert(\"You successfully followed "+(String)session.getAttribute("SearchedUsername")+"!\"); </script>");
             response.sendRedirect("SearchedProfile.jsp");
         }
     }
@@ -456,387 +633,76 @@ public class FirstServlet extends HttpServlet {
                     list.add(data);
             }
         }
+        for (String data : this.SearchArray) {
+            if (data.contains(keyword)) {
+                if(!list.contains(data))
+                    list.add(data);
+            }
+        }
         return list;
     }
+    //Function for firebase
+    //Firebase function
+    public void add_follower_helper(String uid, String uid2, final String username){
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
+        mDatabase.updateChildrenAsync(childUpdate);
+    }
 
-    //Function to set a time cycle to the Servlet to fetch data from firebase
+    public int add_follower(String username1, final String username2){
+        CountDownLatch latch1 = new CountDownLatch(1);
+        mUserReference = FirebaseDatabase.getInstance().getReference("username/" + username1);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                final String uid = dataSnapshot.getValue(String.class);
+                CountDownLatch latch2 = new CountDownLatch(1);
+                mUserReference2 = FirebaseDatabase.getInstance().getReference("username/" + username2);
+                ValueEventListener postListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // Get Post object and use the values to update the UI
+                        String uid2 = dataSnapshot.getValue(String.class);
+                        add_follower_helper(uid, uid2, username2);
+                        latch2.countDown();
+                        //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                        // ...
+                    }
 
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Getting Post failed, log a message
+                        latch2.countDown();
+                        // ...
+                    }
+                };
+                mUserReference2.addListenerForSingleValueEvent(postListener);
+                try {
+                    latch2.await(120, TimeUnit.SECONDS);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                latch1.countDown();
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                // ...
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                latch1.countDown();
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
+        try {
+            latch1.await(120, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
-
-
-
-
-
-//Test code, we will add these code in in the future
-/*
-Map<String, Object> pdfs =user.pdfs;
-                            Map<String,String> descriptionMap = new HashMap<>();
-                            Map<String,String> yearMap = new HashMap<>();
-                            Map<String,String> monthMap = new HashMap<>();
-                            Map<String,String> tagMap = new HashMap<>();
-                            ArrayList<String> nameArray = new ArrayList<>();
-
-                            //Design an Arraylist to convert the Month from Int to String
-                            Map<Integer,String> monthConvert  = new HashMap<>();
-                            monthConvert.put(1,"Jan");
-                            monthConvert.put(2,"Feb");
-                            monthConvert.put(3,"Mar");
-                            monthConvert.put(4,"Apr");
-                            monthConvert.put(5,"May");
-                            monthConvert.put(6,"Jun");
-                            monthConvert.put(7,"Jul");
-                            monthConvert.put(8,"Aug");
-                            monthConvert.put(9,"Sep");
-                            monthConvert.put(10,"Oct");
-                            monthConvert.put(11,"Nov");
-                            monthConvert.put(12,"Dec");
-
-                            //set ArrayList by tag
-                            ArrayList<String> MathArray = new ArrayList<>();
-                            ArrayList<String> CSArray = new ArrayList<>();
-                            ArrayList<String> ArtArray = new ArrayList<>();
-                            ArrayList<String> LitArray = new ArrayList<>();
-                            ArrayList<String> BusArray = new ArrayList<>();
-                            ArrayList<String> StatArray = new ArrayList<>();
-                            ArrayList<String> HistoryArray = new ArrayList<>();
-                            ArrayList<String> PhysicsArray = new ArrayList<>();
-                            ArrayList<String> ChemArray = new ArrayList<>();
-
-                            for (Map.Entry<String, String> entry : tagMap.entrySet()){
-                                if(entry.getValue() == "Mathematics")
-                                    MathArray.add(entry.getKey());
-                                if(entry.getValue() == "Computer Science")
-                                    CSArray.add(entry.getKey());
-                                if(entry.getValue() == "Art & Music")
-                                    ArtArray.add(entry.getKey());
-                                if(entry.getValue() == "Statistical Science")
-                                    StatArray.add(entry.getKey());
-                                if(entry.getValue() == "World History")
-                                    HistoryArray.add(entry.getKey());
-                                if(entry.getValue() == "Physics")
-                                    PhysicsArray.add(entry.getKey());
-                                if(entry.getValue() == "Chemistry")
-                                    ChemArray.add(entry.getKey());
-                                if(entry.getValue() == "Literature")
-                                    LitArray.add(entry.getKey());
-                                if(entry.getValue() == "Business")
-                                    BusArray.add(entry.getKey());
-                            }
-
-                            for(int i = 0; i < 7; i++){
-                                MathArray.add("");
-                                CSArray.add("");
-                                ArtArray.add("");
-                                StatArray.add("");
-                                HistoryArray.add("");
-                                PhysicsArray.add("");
-                                ChemArray.add("");
-                                LitArray.add("");
-                                BusArray.add("");
-                            }
-
-                            //
-                            for (Map.Entry<String, Object> entry : pdfs.entrySet()){
-                                PDF pdf = (PDF) entry.getValue();
-                                descriptionMap.put(entry.getKey(),pdf.description);
-                                yearMap.put(entry.getKey(), String.valueOf(pdf.year));
-                                monthMap.put(entry.getKey(),monthConvert.get(pdf.month));
-                                tagMap.put(entry.getKey(),pdf.tag);
-                                nameArray.add(entry.getKey());
-                            }
-                            descriptionMap.put("","");
-                            yearMap.put("","");
-                            monthMap.put("","");
-                            tagMap.put("","");
-
-
-                            session.setAttribute("followerNum",user.followers.size());
-                            session.setAttribute("followingNum",user.following.size());
-                            session.setAttribute("username",username);
-                            //Set by session
-                            session.setAttribute("descriptionMap",descriptionMap);
-                            session.setAttribute("yearMap",yearMap);
-                            session.setAttribute("monthMap",monthMap);
-                            session.setAttribute("tagMap",tagMap);
-                            //tag array
-                            session.setAttribute("nameArray",nameArray);
-                            session.setAttribute("MathArray",MathArray);
-                            session.setAttribute("CSArray",CSArray);
-                            session.setAttribute("ArtArray",ArtArray);
-                            session.setAttribute("LitArray",LitArray);
-                            session.setAttribute("BusArray",BusArray);
-                            session.setAttribute("StatArray",StatArray);
-                            session.setAttribute("HistoryArray",HistoryArray);
-                            session.setAttribute("PhysicsArray",PhysicsArray);
-                            session.setAttribute("ChemArray",ChemArray);
-
- */
-
-/*
-
-//1
-            ref.addListenerForSingleValueEvent(new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-final String uid = dataSnapshot.getValue(String.class);
-
-        DatabaseReference ref1 = database.getReference("users/"+uid);
-        ValueEventListener postListener = new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-        // Get Post object and use the values to update the UI
-        User user = dataSnapshot.getValue(User.class);
-        Map<String,String> descriptionMap = new HashMap<>();
-
-        ArrayList<String> nameArray = new ArrayList<>();
-        Map<String, Object> pdfs =user.pdfs;
-
-
-        PDF pdf;
-        String yearString;
-        for (Map.Entry<String, Object> entry : pdfs.entrySet()){
-        pdf = (PDF) entry.getValue();
-        descriptionMap.put(entry.getKey(),pdf.description);
-        }
-        descriptionMap.put("","");
-
-
-        //
-
-
-
-        session.setAttribute("followerNum",user.followers.size());
-        session.setAttribute("followingNum",user.following.size());
-        session.setAttribute("username",user.username);
-        //Set by session
-        session.setAttribute("descriptionMap",descriptionMap);
-        latch.countDown();
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        };
-        ref1.addListenerForSingleValueEvent(postListener);
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        });
-
-        //2
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-final String uid = dataSnapshot.getValue(String.class);
-
-        DatabaseReference ref1 = database.getReference("users/"+uid);
-        ValueEventListener postListener = new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-
-        User user = dataSnapshot.getValue(User.class);
-        //set ArrayList by tag
-        ArrayList<String> MathArray = new ArrayList<>();
-        ArrayList<String> CSArray = new ArrayList<>();
-        ArrayList<String> ArtArray = new ArrayList<>();
-        ArrayList<String> LitArray = new ArrayList<>();
-        ArrayList<String> BusArray = new ArrayList<>();
-        ArrayList<String> StatArray = new ArrayList<>();
-        ArrayList<String> HistoryArray = new ArrayList<>();
-        ArrayList<String> PhysicsArray = new ArrayList<>();
-        ArrayList<String> ChemArray = new ArrayList<>();
-        Map<String, Object> pdfs =user.pdfs;
-        Map<String,String> tagMap = new HashMap<>();
-
-
-
-        PDF pdf;
-        for (Map.Entry<String, Object> entry : pdfs.entrySet()){
-        pdf = (PDF)entry.getValue();
-        tagMap.put(entry.getKey(),pdf.tag);
-        }
-        tagMap.put("","");
-
-
-        for (Map.Entry<String, String> entry : tagMap.entrySet()){
-        if(entry.getValue() == "Mathematics")
-        MathArray.add(entry.getKey());
-        if(entry.getValue() == "Computer Science")
-        CSArray.add(entry.getKey());
-        if(entry.getValue() == "Art & Music")
-        ArtArray.add(entry.getKey());
-        if(entry.getValue() == "Statistical Science")
-        StatArray.add(entry.getKey());
-        if(entry.getValue() == "World History")
-        HistoryArray.add(entry.getKey());
-        if(entry.getValue() == "Physics")
-        PhysicsArray.add(entry.getKey());
-        if(entry.getValue() == "Chemistry")
-        ChemArray.add(entry.getKey());
-        if(entry.getValue() == "Literature")
-        LitArray.add(entry.getKey());
-        if(entry.getValue() == "Business")
-        BusArray.add(entry.getKey());
-        }
-
-        for(int i = 0; i < 7; i++){
-        MathArray.add("");
-        CSArray.add("");
-        ArtArray.add("");
-        StatArray.add("");
-        HistoryArray.add("");
-        PhysicsArray.add("");
-        ChemArray.add("");
-        LitArray.add("");
-        BusArray.add("");
-        }
-
-        session.setAttribute("MathArray",MathArray);
-        session.setAttribute("CSArray",CSArray);
-        session.setAttribute("ArtArray",ArtArray);
-        session.setAttribute("LitArray",LitArray);
-        session.setAttribute("BusArray",BusArray);
-        session.setAttribute("StatArray",StatArray);
-        session.setAttribute("HistoryArray",HistoryArray);
-        session.setAttribute("PhysicsArray",PhysicsArray);
-        session.setAttribute("ChemArray",ChemArray);
-        session.setAttribute("tagMap",tagMap);
-        latch.countDown();
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        };
-        ref1.addListenerForSingleValueEvent(postListener);
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        });
-
-
-        // 3
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-final String uid = dataSnapshot.getValue(String.class);
-
-        Map<String,String> yearMap = new HashMap<>();
-        DatabaseReference ref1 = database.getReference("users/"+uid);
-        ValueEventListener postListener = new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-
-        User user = dataSnapshot.getValue(User.class);
-
-
-
-        Map<String,String> tagMap = new HashMap<>();
-        Map<String, Object> pdfs =user.pdfs;
-
-
-
-
-        String yearString;
-        PDF pdf;
-        for (Map.Entry<String, Object> entry : pdfs.entrySet()){
-        pdf = (PDF) entry.getValue();
-        yearString = String.valueOf(pdf.year);
-        yearMap.put(entry.getKey(), yearString);
-        }
-        yearMap.put("","");
-
-
-
-        session.setAttribute("yearMap",yearMap);
-        latch.countDown();
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        };
-        ref1.addListenerForSingleValueEvent(postListener);
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        });
-
-
-        //4
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-final String uid = dataSnapshot.getValue(String.class);
-
-        DatabaseReference ref1 = database.getReference("users/"+uid);
-        ValueEventListener postListener = new ValueEventListener() {
-@Override
-public void onDataChange(DataSnapshot dataSnapshot) {
-        User user = dataSnapshot.getValue(User.class);
-
-        String yearString;
-        Map<String, Object> pdfs =user.pdfs;
-        Map<String,String> monthMap = new HashMap<>();
-        ArrayList<String> nameArray = new ArrayList<>();
-
-
-        PDF pdf;
-        for (Map.Entry<String, Object> entry : pdfs.entrySet()){
-        pdf = (PDF) entry.getValue();
-        monthMap.put(entry.getKey(),monthConvert.get(pdf.month));
-        nameArray.add(entry.getKey());
-        }
-        monthMap.put("","");
-
-
-
-        session.setAttribute("monthMap",monthMap);
-        session.setAttribute("nameArray",nameArray);
-
-        latch.countDown();
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        };
-        ref1.addListenerForSingleValueEvent(postListener);
-        }
-
-@Override
-public void onCancelled(DatabaseError databaseError) {
-        // Getting Post failed, log a message
-        // ...
-        latch.countDown();
-        }
-        });
-        */
-

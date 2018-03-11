@@ -138,15 +138,12 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <!--li><a href="#search">Search</a></li-->
-        <li><a href="#about">About</a></li>
+        <li><a href="https://github.com/delinsun/Notehub">About</a></li>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search NoteHub">
           </div>
         </form>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="register.html">logout <i class="fa fa-sign-out"></i></a></li>
       </ul>
     </div>
   </div>

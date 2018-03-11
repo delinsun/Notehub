@@ -145,9 +145,6 @@
                     </div>
                 </form>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.html">logout <i class="fa fa-sign-out"></i></a></li>
-            </ul>
         </div>
     </div>
 </nav>

@@ -1,125 +1,64 @@
-// (function() {
-//     const config  = {
-//         apiKey: "AIzaSyDMN4L5QAuJI6pA1e65TCEvid4iprR0KaM",
-//         authDomain: "notehub-cs48.firebaseapp.com",
-//         databaseURL: "https://notehub-cs48.firebaseio.com",
-//         projectId: "notehub-cs48",
-//         storageBucket: "notehub-cs48.appspot.com",
-//         messagingSenderId: "1094694673414"
-//     };
-//     firebase.initializeApp(config);
-// })
-function initApp() {
-    // Listening for auth state changes.
-    // [START authstatelistener]
-    firebase.auth().onAuthStateChanged(function(user) {
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-verify-email').disabled = true;
-        // [END_EXCLUDE]
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-            if (!emailVerified) {
-                document.getElementById('quickstart-verify-email').disabled = false;
-            }
-            // [END_EXCLUDE]
-        } else {
-            // User is signed out.
-            // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-            document.getElementById('quickstart-account-details').textContent = 'null';
-            // [END_EXCLUDE]
-        }
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
+(function() {
+
+    var config = {
+        apiKey: "AIzaSyDMN4L5QAuJI6pA1e65TCEvid4iprR0KaM",
+        authDomain: "notehub-cs48.firebaseapp.com",
+        databaseURL: "https://notehub-cs48.firebaseio.com",
+        //projectId: "notehub-cs48",
+        storageBucket: "notehub-cs48.appspot.com",
+        //messagingSenderId: "1094694673414"
+    };
+    firebase.initializeApp(config);
+
+    const txtEmail = document.getElementById('txtEmail');
+    const txtPassword = document.getElementById('txtPassword');
+    const btnLogin = document.getElementById('btnLogin');
+    //const btnSignUp = document.getElementById('btnSignUp');
+    //const btnLogout = document.getElementById('btnLogout');
+
+    // login event
+    btnLogin.addEventListener('click', e=>{
+        const email = txtEmail.value;
+        const pass = txtPassword.value;
+        const auth = firebase.auth();
+
+        // Sign in
+        const promise = auth.signInWithEmailAndPassword(email, pass);
+        promise.catch(e => console.log(e.message));
+        promise.catch(e => alert(e.message));
+
+        //Just for test
+        window.location.href = "Request?useremail="+email;
     });
-    // [END authstatelistener]
-    document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-    document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-    document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-    document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
-}
-window.onload = function() {
-    initApp();
-};
 
-function login() {
+    /*
+      btnSignUp.addEventListener('click', e=>{
+        const email = txtEmail.value;
+        const pass = txtPassword.value;
+        const auth = firebase.auth();
+        // Sign in
+        const promise = auth.createUserWithEmailAndPassword(email, pass);
+        promise.catch(e => console.log(e.message));
+      });
+    */
 
-    var userEmail = document.getElementById("exampleInputEmail2").value;
-    var userPass = document.getElementById("exampleInputPassword2").value;
 
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        window.alert("Error : " + errorMessage);
-
-        // ...
+    btnLogout.addEventListener('click', e =>{
+        firebase.auth().signOut();
     });
-firebase.auth().onAuthStateChanged(function(user) {
 
-    if (user) {
-        // User is signed in.
 
-        document.getElementById("user_div").style.display = "block";
-        document.getElementById("login_div").style.display = "none";
-
-        var user = firebase.auth().currentUser;
-
-        if(user != null){
-
-            var email_id = user.email;
-            document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
-
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if(firebaseUser){
+            console.log(firebaseUser);
+            window.location.href = "Request?useremail="+email;
+            //alert('Logged In!!!')
+            //btnLogout.classList.remove('hide');
+        } else{
+            //alert('not logged in')
+            console.log('not logged in');
+            //btnLogout.classList.add('hide');
         }
+    });
 
-    } else {
-        // No user is signed in.
-
-        document.getElementById("user_div").style.display = "none";
-        document.getElementById("login_div").style.display = "block";
-
-    }
-});
-}
-firebase.auth().onAuthStateChanged(function(user) {
-
-    if (user) {
-        // User is signed in.
-
-        document.getElementById("user_div").style.display = "block";
-        document.getElementById("login_div").style.display = "none";
-
-        var user = firebase.auth().currentUser;
-
-        if(user != null){
-
-            var email_id = user.email;
-            document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
-
-        }
-
-    } else {
-        // No user is signed in.
-
-        document.getElementById("user_div").style.display = "none";
-        document.getElementById("login_div").style.display = "block";
-
-    }
-});
-function logout(){
-    firebase.auth().signOut();
-}
+}());

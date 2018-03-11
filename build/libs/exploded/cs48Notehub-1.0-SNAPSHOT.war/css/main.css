@@ -38,6 +38,27 @@ hr {
     background-color: rgba(255, 255, 255, .8);
     color: black
 }
+#follow-dp {
+    min-width: 100px;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, .8);
+    color: black
+}
+#follow-dp-follower {
+    min-width: 100px;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, .8);
+    color: black
+}
+#follow-dp-following {
+    min-width: 100px;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, .8);
+    color: black
+}
 
 #login-dp .help-block {
     font-size: 12px

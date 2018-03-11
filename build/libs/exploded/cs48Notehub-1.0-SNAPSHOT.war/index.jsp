@@ -33,7 +33,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <!--li><a href="#search">Search</a></li-->
-                <li><a href="#about">About</a></li>
+                <li><a href="https://github.com/delinsun/Notehub">About</a></li>
                 <form class="navbar-form navbar-left" role="search" action="Request">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword" name="SearchedUsername"
@@ -49,9 +49,9 @@
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!--
-                <li><a href="register.html">Signup <i class="fa fa-user-plus"></i></a></li>
 
+                <li><a href="login.html">Sign in<i class="fa fa-sign-in"></i></a></li>
+                <!--
 
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i
                         class="fa fa-user"></i></a>
@@ -125,7 +125,10 @@
                 <h1>NoteHub</h1>
                 <h3>Take notes for everything better, together</h3>
                 <hr>
-                <button class="btn btn-default btn-lg"><i class="fa fa-bookmark"></i> Get Started!</button>
+                <a href="login.html">
+                    <button class="btn btn-default btn-lg"><i class="fa fa-bookmark"></i> Get Started!</button>
+                </a>
+
             </div>
         </div>
     </div>
