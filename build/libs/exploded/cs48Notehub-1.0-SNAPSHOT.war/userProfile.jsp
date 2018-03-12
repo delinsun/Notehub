@@ -64,73 +64,73 @@
     else if (session.getAttribute("email") != null) {
         email = (String) session.getAttribute("email");
         emailName = (String) session.getAttribute("username");
-        profileImageUrl = (String) session.getAttribute("image");
+        profileImageUrl = (String) session.getAttribute("uimage");
     }
-    if (session.getAttribute("followerNum") != null) {
-        followerNum = (int) session.getAttribute("followerNum");
+    if (session.getAttribute("ufollowerNum") != null) {
+        followerNum = (int) session.getAttribute("ufollowerNum");
     }
-    if (session.getAttribute("followingNum") != null) {
-        followingNum = (int) session.getAttribute("followingNum");
+    if (session.getAttribute("ufollowingNum") != null) {
+        followingNum = (int) session.getAttribute("ufollowingNum");
     }
-    if (session.getAttribute("shared") != null)
-        shared = (int) session.getAttribute("shared");
+    if (session.getAttribute("ushared") != null)
+        shared = (int) session.getAttribute("ushared") - 1;
 
-    if (session.getAttribute("descriptionMap") != null) {
-        descriptionMap = (Map<String, String>) session.getAttribute("descriptionMap");
-    }
-
-    if (session.getAttribute("yearMap") != null) {
-        yearMap = (Map<String, Integer>) session.getAttribute("yearMap");
+    if (session.getAttribute("udescriptionMap") != null) {
+        descriptionMap = (Map<String, String>) session.getAttribute("udescriptionMap");
     }
 
-    if (session.getAttribute("monthMap") != null) {
-        monthMap = (Map<String, String>) session.getAttribute("monthMap");
+    if (session.getAttribute("uyearMap") != null) {
+        yearMap = (Map<String, Integer>) session.getAttribute("uyearMap");
     }
 
-    if (session.getAttribute("tagMap") != null) {
-        tagMap = (Map<String, String>) session.getAttribute("tagMap");
+    if (session.getAttribute("umonthMap") != null) {
+        monthMap = (Map<String, String>) session.getAttribute("umonthMap");
     }
 
-    if (session.getAttribute("nameArray") != null) {
-        nameArray = (ArrayList<String>) session.getAttribute("nameArray");
+    if (session.getAttribute("utagMap") != null) {
+        tagMap = (Map<String, String>) session.getAttribute("utagMap");
+    }
+
+    if (session.getAttribute("unameArray") != null) {
+        nameArray = (ArrayList<String>) session.getAttribute("unameArray");
     }
 
     //getting arrays with different tags
-    if (session.getAttribute("ChemArray") != null) {
-        ChemArray = (ArrayList<String>) session.getAttribute("ChemArray");
+    if (session.getAttribute("uChemArray") != null) {
+        ChemArray = (ArrayList<String>) session.getAttribute("uChemArray");
         ChemSize = String.valueOf(ChemArray.size());
     }
 
-    if (session.getAttribute("PhysicsArray") != null) {
-        PhysicsArray = (ArrayList<String>) session.getAttribute("PhysicsArray");
+    if (session.getAttribute("uPhysicsArray") != null) {
+        PhysicsArray = (ArrayList<String>) session.getAttribute("uPhysicsArray");
         PhysicsSize = String.valueOf(PhysicsArray.size());
     }
-    if (session.getAttribute("HistoryArray") != null) {
-        HistoryArray = (ArrayList<String>) session.getAttribute("HistoryArray");
+    if (session.getAttribute("uHistoryArray") != null) {
+        HistoryArray = (ArrayList<String>) session.getAttribute("uHistoryArray");
         HistorySize = String.valueOf(HistoryArray.size());
     }
-    if (session.getAttribute("StatArray") != null) {
-        StatArray = (ArrayList<String>) session.getAttribute("StatArray");
+    if (session.getAttribute("uStatArray") != null) {
+        StatArray = (ArrayList<String>) session.getAttribute("uStatArray");
         StatSize = String.valueOf(StatArray.size());
     }
-    if (session.getAttribute("BusArray") != null) {
-        BusArray = (ArrayList<String>) session.getAttribute("BusArray");
+    if (session.getAttribute("uBusArray") != null) {
+        BusArray = (ArrayList<String>) session.getAttribute("uBusArray");
         BusSize = String.valueOf(BusArray.size());
     }
-    if (session.getAttribute("LitArray") != null) {
-        LitArray = (ArrayList<String>) session.getAttribute("LitArray");
+    if (session.getAttribute("uLitArray") != null) {
+        LitArray = (ArrayList<String>) session.getAttribute("uLitArray");
         LitSize = String.valueOf(LitArray.size());
     }
-    if (session.getAttribute("ArtArray") != null) {
-        ArtArray = (ArrayList<String>) session.getAttribute("ArtArray");
+    if (session.getAttribute("uArtArray") != null) {
+        ArtArray = (ArrayList<String>) session.getAttribute("uArtArray");
         ArtSize = String.valueOf(ArtArray.size());
     }
-    if (session.getAttribute("CSArray") != null) {
-        CSArray = (ArrayList<String>) session.getAttribute("CSArray");
+    if (session.getAttribute("uCSArray") != null) {
+        CSArray = (ArrayList<String>) session.getAttribute("uCSArray");
         CSSize = String.valueOf(CSArray.size());
     }
-    if (session.getAttribute("MathArray") != null) {
-        MathArray = (ArrayList<String>) session.getAttribute("MathArray");
+    if (session.getAttribute("uMathArray") != null) {
+        MathArray = (ArrayList<String>) session.getAttribute("uMathArray");
         MathSize = String.valueOf(MathArray.size());
     }
 
@@ -277,7 +277,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="MathList.jsp">
+                                    <a href="uMathList.jsp">
                                         <img alt="300x200"
                                              src="http://study.com/cimages/course-image/linear-algebra-syllabus-lesson-plans_175046_large.jpg">
                                     </a>
@@ -294,7 +294,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="CSList.jsp">
+                                    <a href="uCSList.jsp">
                                         <img alt="300x200"
                                              src="https://cdn-images-1.medium.com/max/2000/1*LgaStRUic1JjYfhdYplClg.jpeg">
                                     </a>
@@ -311,7 +311,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="ArtList.jsp">
+                                    <a href="uArtList.jsp">
                                         <img alt="300x200"
                                              src="https://axerosolutions.com/attachment?file=UZkB7AwtFeOsAZEgxrSeAg%3D%3D">
                                     </a>
@@ -331,7 +331,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="BusList.jsp">
+                                    <a href="uBusList.jsp">
                                         <img alt="300x200"
                                              src="https://salespop.pipelinersales.com/wp-content/uploads/2014/04/the-benefit-of-web-services-to-a-crm-software.jpg">
                                     </a>
@@ -347,7 +347,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="StatList.jsp">
+                                    <a href="uStatList.jsp">
                                         <img alt="300x200"
                                              src="https://cdn.lynda.com/course/503930/503930-636173965766935316-16x9.jpg">
                                     </a>
@@ -363,7 +363,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="thumbnail">
-                                    <a href="HistoryList.jsp">
+                                    <a href="uHistoryList.jsp">
                                         <img alt="300x200"
                                              src="http://study.com/cimages/course-image/virginia-sol-world-history-geography-to-1500-test-prep-practice_217975_large.jpg">
                                     </a>
@@ -382,7 +382,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="thumbnail">
-                                        <a href="PhysicsList.jsp">
+                                        <a href="uPhysicsList.jsp">
                                             <img alt="300x200"
                                                  src="https://urbangeekz.com/wp-content/uploads/2015/10/Not-Rocket-Science-How-to-Uncomplicate-Your-Business-Model-837x480.jpg">
                                         </a>
@@ -399,7 +399,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="thumbnail">
-                                        <a href="ChemList.jsp">
+                                        <a href="uChemList.jsp">
                                             <img alt="300x200"
                                                  src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fa/6926005ea411e490ff8d4c5d4ff426/chemistry_logo.png">
                                         </a>
@@ -416,7 +416,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="thumbnail">
-                                        <a href="LitList.jsp">
+                                        <a href="uLitList.jsp">
                                             <img alt="300x200"
                                                  src="http://radon-mclean.org/wp-content/uploads/sites/82/2016/07/Literature-and-Novels.jpg">
                                         </a>

@@ -705,4 +705,8 @@ public class FirstServlet extends HttpServlet {
         }
         return 0;
     }
+
+    public boolean FirebaseisReady() {
+        return userArraygetted;
+    }
 }
