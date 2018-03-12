@@ -7,83 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a44b9c16-0040-4520-a9ba-5858a693c6f5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cs48Notehub_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/cs48Notehub_main.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cs48Notehub_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/cs48Notehub_test.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/libs/cs48Notehub-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/build/libs/cs48Notehub-1.0-SNAPSHOT.war" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ArtList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ArtList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/BusList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/BusList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/CSList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/CSList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ChemList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ChemList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/HistoryList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/HistoryList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/LitList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/LitList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/MathList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/MathList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/PhysicsList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/PhysicsList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedProfile.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedProfile.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/StatList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/StatList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$1.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$2.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$2.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$3.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$3.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4$1.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5$1.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6$1.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/followList.html" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/followList.html" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/index.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/js/login.js" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/js/login.js" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/login.html" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/login.html" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uArtList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uArtList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uBusList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uBusList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uCSList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uCSList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uChemList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uChemList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uHistoryList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uHistoryList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uLitList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uLitList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uMathList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uMathList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uPhysicsList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uPhysicsList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uStatList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uStatList.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/userProfile.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/userProfile.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$2.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$3.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$4$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$4$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$4.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$5$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$5$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$5.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$6$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$6$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$6.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet.class" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FirstServlet.java" afterPath="$PROJECT_DIR$/src/main/java/FirstServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/BusList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/BusList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/CSList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ChemList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/ChemList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/HistoryList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/HistoryList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/LitList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/LitList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/MathList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/MathList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/StatList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/StatList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/followList.html" afterPath="$PROJECT_DIR$/src/main/webapp/followList.html" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uArtList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uArtList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uBusList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uBusList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uCSList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uCSList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uChemList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uChemList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uHistoryList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uHistoryList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uLitList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uLitList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uMathList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uMathList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uPhysicsList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uPhysicsList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uStatList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uStatList.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -219,10 +143,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userProfile.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userProfile.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="1701">
               <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="41" />
               <folding>
                 <marker date="1520845482476" expanded="true" signature="30013:30048" ph="..." />
@@ -271,8 +205,8 @@
       <find>follow.html</find>
       <find>follow.</find>
       <find>followerNum</find>
-      <find>uemail</find>
       <find>email</find>
+      <find>uemail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -673,7 +607,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/StatList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/LitList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/BusList.jsp" />
@@ -692,6 +625,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/uCSList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/uChemList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/uBusList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -1191,7 +1125,7 @@
       <workItem from="1520582026078" duration="3198000" />
       <workItem from="1520649608975" duration="2193000" />
       <workItem from="1520743881738" duration="1028000" />
-      <workItem from="1520833250192" duration="14173000" />
+      <workItem from="1520833250192" duration="14467000" />
     </task>
     <servers />
   </component>
@@ -1228,7 +1162,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135496000" />
+    <option name="totallyTimeSpent" value="135790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
@@ -1573,14 +1507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1663,6 +1589,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="41" />
+          <folding>
+            <marker date="1520845482476" expanded="true" signature="30013:30048" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FirstServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1671,13 +1607,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="41" />
-          <folding>
-            <marker date="1520845482476" expanded="true" signature="30013:30048" ph="..." />
-          </folding>
+        <state relative-caret-position="243">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -17,7 +17,7 @@
 </head>
 <body>
 <%
-    if (session.getAttribute("username") != null) {
+    if (session.getAttribute("uemail") != null) {
         response.sendRedirect("userProfile.jsp");
     }
 %>
