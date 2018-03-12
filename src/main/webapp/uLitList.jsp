@@ -42,11 +42,11 @@
     ArrayList<String> ChemArray = new ArrayList<>();
 
     //Get variables
-    if (session.getAttribute("email") == null) {
+    if (session.getAttribute("uemail") == null) {
         response.sendRedirect("index.jsp");
     }
-    else if (session.getAttribute("email") != null) {
-        email = (String) session.getAttribute("email");
+    else if (session.getAttribute("uemail") != null) {
+        email = (String) session.getAttribute("uemail");
         emailName = (String) session.getAttribute("username");
         profileImageUrl = (String) session.getAttribute("uimage");
     }
@@ -129,13 +129,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">NoteHub</a>
+            <a class="navbar-brand" href="Request?update=true">NoteHub</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <!--li><a href="#search">Search</a></li-->
-                <li><a href="#about">About</a></li>
+                <li><a href="https://github.com/delinsun/Notehub">About</a></li>
                 <form class="navbar-form navbar-left" role="search" action="Request">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search NoteHub" id="keyword" name="SearchedUsername"

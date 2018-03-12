@@ -10,12 +10,13 @@
     };
     firebase.initializeApp(config);
 
-    const txtEmail = document.getElementById('txtEmail');
-    const txtPassword = document.getElementById('txtPassword');
-    const btnLogin = document.getElementById('btnLogin');
+    //const txtEmail = document.getElementById('txtEmail');
+    //const txtPassword = document.getElementById('txtPassword');
+    //const btnLogin = document.getElementById('btnLogin');
     //const btnSignUp = document.getElementById('btnSignUp');
-    //const btnLogout = document.getElementById('btnLogout');
+    const btnLogout = document.getElementById('btnLogout');
 
+/*
     // login event
     btnLogin.addEventListener('click', e=>{
         const email = txtEmail.value;
@@ -27,6 +28,7 @@
         promise.catch(e => console.log(e.message));
         promise.catch(e => alert(e.message));
     });
+*/
 
     /*
       btnSignUp.addEventListener('click', e=>{
@@ -48,7 +50,10 @@
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser){
             console.log(firebaseUser);
-            window.location.href = "Request?useremail="+email;
+            var email1 = document.getElementById('txtEmail').value;
+            //alert(email1);
+            window.location.href = "Request?useremail="+email1;
+            //window.location.href = "www.google.com";
             //alert('Logged In!!!')
             //btnLogout.classList.remove('hide');
         } else{

@@ -9,29 +9,81 @@
     <list default="true" id="a44b9c16-0040-4520-a9ba-5858a693c6f5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cs48Notehub.iml" afterPath="$PROJECT_DIR$/.idea/modules/cs48Notehub.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/cs48Notehub_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/cs48Notehub_main.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/cs48Notehub_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/cs48Notehub_test.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/build/libs/cs48Notehub-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/build/libs/cs48Notehub-1.0-SNAPSHOT.war" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ArtList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ArtList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/BusList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/BusList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/CSList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/CSList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ChemList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/ChemList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/HistoryList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/HistoryList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/LitList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/LitList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/MathList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/MathList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/PhysicsList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/PhysicsList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedList.jsp" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedProfile.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/SearchedProfile.jsp" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirebaseTest$1$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirebaseTest$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirebaseTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/StatList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/StatList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$2.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$2.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$3.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$3.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$4.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$5.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6$1.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6$1.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet$6.class" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet.class" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/FirstServlet.class" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/WEB-INF/classes/MD5UtilTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/followList.html" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/followList.html" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/index.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/index.jsp" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/js/login.js" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/js/login.js" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/login.html" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/login.html" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uArtList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uArtList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uBusList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uBusList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uCSList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uCSList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uChemList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uChemList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uHistoryList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uHistoryList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uLitList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uLitList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uMathList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uMathList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uPhysicsList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uPhysicsList.jsp" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uStatList.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/uStatList.jsp" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/userProfile.jsp" afterPath="$PROJECT_DIR$/build/libs/exploded/cs48Notehub-1.0-SNAPSHOT.war/userProfile.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirebaseTest$1$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirebaseTest$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/FirebaseTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$2.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$2.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$3.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$3.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$4$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$4$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$4.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$4.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$5$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$5$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$5.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$5.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$6$1.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$6$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet$6.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet$6.class" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/FirstServlet.class" afterPath="$PROJECT_DIR$/out/production/classes/FirstServlet.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/MD5UtilTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FirebaseTest.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FirstServlet.java" afterPath="$PROJECT_DIR$/src/main/java/FirstServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MD5UtilTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/BusList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/BusList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CSList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/CSList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ChemList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/ChemList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/HistoryList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/HistoryList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/LitList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/LitList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/MathList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/MathList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/StatList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/StatList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/followList.html" afterPath="$PROJECT_DIR$/src/main/webapp/followList.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uArtList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uArtList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uBusList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uBusList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uCSList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uCSList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uChemList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uChemList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uHistoryList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uHistoryList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uLitList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uLitList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uMathList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uMathList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uPhysicsList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uPhysicsList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/uStatList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uStatList.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -160,89 +212,21 @@
       <file leaf-file-name="FirstServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FirstServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="107" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#31924#31925#0" expanded="true" />
-                <element signature="e#31962#31963#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FirstServletTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/FirstServletTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2673">
-              <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MD5Util.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MD5Util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MD5UtilTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/MD5UtilTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PDF.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/PDF.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="242">
+              <caret line="472" column="40" lean-forward="false" selection-start-line="472" selection-start-column="34" selection-end-line="472" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/State.java">
+      <file leaf-file-name="userProfile.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TimeTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="242">
+              <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="41" />
+              <folding>
+                <marker date="1520845482476" expanded="true" signature="30013:30048" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -259,24 +243,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>css</find>
-      <find>Math</find>
-      <find>reques</find>
-      <find>take</find>
-      <find>latch</find>
-      <find>userArraygetted</find>
-      <find>monthConvert</find>
-      <find>keywordjump</find>
-      <find>login</find>
-      <find>index.jsp</find>
       <find>button</find>
       <find>searchnames</find>
       <find>follow me</find>
       <find>#</find>
       <find>SearchedUsername</find>
       <find>MD5</find>
-      <find>email</find>
-      <find>logout</find>
       <find>sign in</find>
       <find>shares</find>
       <find>show</find>
@@ -285,10 +257,22 @@
       <find>main.css</find>
       <find>follow</find>
       <find>Home</find>
-      <find>username</find>
       <find>home</find>
-      <find>about</find>
       <find>FirebaseApp</find>
+      <find>index.jsp</find>
+      <find>username</find>
+      <find>login.html</find>
+      <find>Notehub</find>
+      <find>logout</find>
+      <find>response.sendRedirect(&quot;index.jsp&quot;);</find>
+      <find>NoteHub</find>
+      <find>about</find>
+      <find>followList</find>
+      <find>follow.html</find>
+      <find>follow.</find>
+      <find>followerNum</find>
+      <find>uemail</find>
+      <find>email</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -677,26 +661,37 @@
         <option value="$PROJECT_DIR$/src/main/java/MD5Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/State.java" />
         <option value="$PROJECT_DIR$/src/main/java/TimeTask.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/login.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/login.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/StatList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/BusList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ChemList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/MathList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/CSList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/HistoryList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/LitList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/MD5UtilTest.java" />
         <option value="$PROJECT_DIR$/src/test/FirebaseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FirstServlet.java" />
         <option value="$PROJECT_DIR$/src/test/FirstServletTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ChemList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/CSList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/HistoryList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/MathList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SearchedList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/StatList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/LitList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ArtList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/BusList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/followList.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/login.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userProfile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/loginPage.js" />
+        <option value="$PROJECT_DIR$/src/main/java/FirstServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uArtList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uPhysicsList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uStatList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uMathList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uLitList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uHistoryList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uCSList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uChemList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/uBusList.jsp" />
       </list>
     </option>
   </component>
@@ -733,9 +728,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -765,6 +759,21 @@
               <item name="cs48Notehub" type="b2602c69:ProjectViewProjectNode" />
               <item name="Notehub" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs48Notehub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Notehub" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs48Notehub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Notehub" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
@@ -772,6 +781,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1181,22 +1191,11 @@
       <workItem from="1520582026078" duration="3198000" />
       <workItem from="1520649608975" duration="2193000" />
       <workItem from="1520743881738" duration="1028000" />
+      <workItem from="1520833250192" duration="14173000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstServletTest - 2018.03.11 at 18h 18m 18s.xml">
-      <configuration name="FirstServletTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstServletTest - 2018.03.11 at 18h 18m 38s.xml">
-      <configuration name="FirstServletTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstServletTest - 2018.03.11 at 18h 19m 17s.xml">
-      <configuration name="FirstServletTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstServletTest - 2018.03.11 at 18h 19m 39s.xml">
-      <configuration name="FirstServletTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FirstServletTest - 2018.03.11 at 18h 21m 08s.xml">
       <configuration name="FirstServletTest" configurationId="JUnit" />
     </history-entry>
@@ -1215,51 +1214,31 @@
     <history-entry file="FirstServletTest - 2018.03.11 at 18h 28m 19s.xml">
       <configuration name="FirstServletTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FirstServletTest - 2018.03.11 at 18h 31m 41s.xml">
+      <configuration name="FirstServletTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstServletTest - 2018.03.11 at 22h 42m 03s.xml">
+      <configuration name="FirstServletTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstServletTest - 2018.03.11 at 22h 42m 37s.xml">
+      <configuration name="FirstServletTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Notehub_[test] - 2018.03.11 at 18h 31m 20s.xml">
+      <configuration name="Notehub [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121176000" />
+    <option name="totallyTimeSpent" value="135496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293556" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39275363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293556" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32816228" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3890215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23542117" sideWeight="0.81640625" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23542117" sideWeight="0.18359375" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54269665" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1273,17 +1252,21 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8066826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22732182" sideWeight="0.8285024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23110151" sideWeight="0.8285024" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51910114" sideWeight="0.17149758" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1297,7 +1280,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1312,7 +1295,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8066826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2224622" sideWeight="0.8285024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23110151" sideWeight="0.8285024" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51910114" sideWeight="0.17149758" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1334,73 +1317,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FirstServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#31924#31925#0" expanded="true" />
-            <element signature="e#31962#31963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/User.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/FirebaseTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18603">
-          <caret line="689" column="0" lean-forward="false" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FirstServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#31924#31925#0" expanded="true" />
-            <element signature="e#31962#31963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SearchedProfile.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ServiceAccountKey.json" />
     <entry file="file://$PROJECT_DIR$/src/main/java/test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1419,49 +1335,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/James.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/urlFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/TimeTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,20 +1365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1515,29 +1379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2943">
-          <caret line="151" column="45" lean-forward="false" selection-start-line="151" selection-start-column="45" selection-end-line="151" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-35535">
@@ -1545,98 +1386,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SearchedList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StatList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/BusList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ChemList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/HistoryList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/LitList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ArtList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CSList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/MathList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FirebaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="67" column="61" lean-forward="false" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MD5UtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FirebaseTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/MD5UtilTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="27">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1646,29 +1403,280 @@
         <state relative-caret-position="270">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TimeTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/James.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/FirstServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Notehub.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ArtList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="64" lean-forward="false" selection-start-line="141" selection-start-column="64" selection-end-line="141" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/BusList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="64" lean-forward="false" selection-start-line="141" selection-start-column="64" selection-end-line="141" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ChemList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="142" column="71" lean-forward="false" selection-start-line="142" selection-start-column="66" selection-end-line="142" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CSList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="63" lean-forward="false" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/HistoryList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="63" lean-forward="false" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/LitList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="71" lean-forward="false" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/MathList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="63" lean-forward="false" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/PhysicsList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="63" lean-forward="false" selection-start-line="141" selection-start-column="58" selection-end-line="141" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SearchedList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="76" column="71" lean-forward="false" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StatList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="141" column="71" lean-forward="false" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/followList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="26" column="67" lean-forward="false" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1287">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/loginPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-657">
+          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SearchedProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="374" column="39" lean-forward="false" selection-start-line="349" selection-start-column="20" selection-end-line="380" selection-end-column="25" />
+          <folding>
+            <marker date="1520833846779" expanded="true" signature="33775:33810" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uStatList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uPhysicsList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uMathList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uLitList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uHistoryList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uCSList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uChemList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uBusList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/uArtList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FirstServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="107" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#31924#31925#0" expanded="true" />
-            <element signature="e#31962#31963#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="472" column="40" lean-forward="false" selection-start-line="472" selection-start-column="34" selection-end-line="472" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/FirstServletTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userProfile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2673">
-          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+        <state relative-caret-position="242">
+          <caret line="63" column="41" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1520845482476" expanded="true" signature="30013:30048" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1683,10 +1691,10 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="library" />
-              <type id="javaee-facet-resources" />
-              <type id="artifact" />
               <type id="jpa-descriptors" />
+              <type id="artifact" />
+              <type id="javaee-facet-resources" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
           <last-edited>Gradle : com.Notehub : cs48Notehub-1.0-SNAPSHOT.war</last-edited>
@@ -1738,7 +1746,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>cs48Notehub_test|cs48Notehub</last-edited>
+          <last-edited>cs48Notehub</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -40,6 +40,11 @@ public class FirstServlet extends HttpServlet {
     private int followerNum = 0;
     private int followingNum = 0;
 
+    //follower numbers
+    private int ufollowerNum = 0;
+    private int ufollowingNum = 0;
+
+
     //set ArrayList by tag
     private ArrayList<String> MathArray = new ArrayList<>();
     private ArrayList<String> CSArray = new ArrayList<>();
@@ -51,6 +56,17 @@ public class FirstServlet extends HttpServlet {
     private ArrayList<String> PhysicsArray = new ArrayList<>();
     private ArrayList<String> ChemArray = new ArrayList<>();
 
+    //set ArrayList by tag for user
+    private ArrayList<String> uMathArray = new ArrayList<>();
+    private ArrayList<String> uCSArray = new ArrayList<>();
+    private ArrayList<String> uArtArray = new ArrayList<>();
+    private ArrayList<String> uLitArray = new ArrayList<>();
+    private ArrayList<String> uBusArray = new ArrayList<>();
+    private ArrayList<String> uStatArray = new ArrayList<>();
+    private ArrayList<String> uHistoryArray = new ArrayList<>();
+    private ArrayList<String> uPhysicsArray = new ArrayList<>();
+    private ArrayList<String> uChemArray = new ArrayList<>();
+
     //Design an Arraylist to convert the Month from Int to String
     private Map<Integer, String> monthConvert = new HashMap<>();
     private Map<String, String> descriptionMap = new HashMap<>();
@@ -60,11 +76,25 @@ public class FirstServlet extends HttpServlet {
     private Map<String,String> urlMap = new HashMap<>();
     private Map<String,String> dayMap = new HashMap<>();
 
+    //Design an Arraylist to convert the Month from Int to String
+    private Map<String, String> udescriptionMap = new HashMap<>();
+    private Map<String, String> utagMap = new HashMap<>();
+    private Map<String, String> umonthMap = new HashMap<>();
+    private Map<String, String> uyearMap = new HashMap<>();
+    private Map<String,String> uurlMap = new HashMap<>();
+    private Map<String,String> udayMap = new HashMap<>();
+
     //Arrays used for follower following
     private ArrayList<String> followerArray = new ArrayList<>();
     private ArrayList<String> followingArray = new ArrayList<>();
     private ArrayList<String> followerUrlArray = new ArrayList<>();
     private ArrayList<String> followingUrlArray = new ArrayList<>();
+
+    //Arrays used for follower following
+    private ArrayList<String> ufollowerArray = new ArrayList<>();
+    private ArrayList<String> ufollowingArray = new ArrayList<>();
+    private ArrayList<String> ufollowerUrlArray = new ArrayList<>();
+    private ArrayList<String> ufollowingUrlArray = new ArrayList<>();
 
     //Arrays for search pdf
     private ArrayList<String> SearchArray = new ArrayList<>();
@@ -78,8 +108,12 @@ public class FirstServlet extends HttpServlet {
     //pdf names
     private ArrayList<String> nameArray = new ArrayList<>();
 
+    //pdf names for user
+    private ArrayList<String> unameArray = new ArrayList<>();
+
     //user names
     private ArrayList<String> userArray = new ArrayList<>();
+
     private Map<String, PDF> pdfs;
     private Map<String,String> names;
     ArrayList<Map.Entry<Map,String>> namelists = new ArrayList<Map.Entry<Map, String>>();
@@ -260,26 +294,26 @@ public class FirstServlet extends HttpServlet {
         //code for login
         if (request.getParameter("useremail") != null) {
             //renew lists and maps
-            MathArray = new ArrayList<>();
-            CSArray = new ArrayList<>();
-            ArtArray = new ArrayList<>();
-            LitArray = new ArrayList<>();
-            BusArray = new ArrayList<>();
-            StatArray = new ArrayList<>();
-            HistoryArray = new ArrayList<>();
-            PhysicsArray = new ArrayList<>();
-            ChemArray = new ArrayList<>();
-            descriptionMap = new HashMap<>();
-            tagMap = new HashMap<>();
-            monthMap = new HashMap<>();
-            yearMap = new HashMap<>();
-            urlMap = new HashMap<>();
-            dayMap = new HashMap<>();
-            nameArray = new ArrayList<>();
-            followerArray = new ArrayList<>();
-            followingArray = new ArrayList<>();
-            followerUrlArray = new ArrayList<>();
-            followingUrlArray = new ArrayList<>();
+            uMathArray = new ArrayList<>();
+            uCSArray = new ArrayList<>();
+            uArtArray = new ArrayList<>();
+            uLitArray = new ArrayList<>();
+            uBusArray = new ArrayList<>();
+            uStatArray = new ArrayList<>();
+            uHistoryArray = new ArrayList<>();
+            uPhysicsArray = new ArrayList<>();
+            uChemArray = new ArrayList<>();
+            udescriptionMap = new HashMap<>();
+            utagMap = new HashMap<>();
+            umonthMap = new HashMap<>();
+            uyearMap = new HashMap<>();
+            uurlMap = new HashMap<>();
+            udayMap = new HashMap<>();
+            unameArray = new ArrayList<>();
+            ufollowerArray = new ArrayList<>();
+            ufollowingArray = new ArrayList<>();
+            ufollowerUrlArray = new ArrayList<>();
+            ufollowingUrlArray = new ArrayList<>();
 
             HttpSession session = request.getSession();
 
@@ -289,7 +323,7 @@ public class FirstServlet extends HttpServlet {
             String image = MD5Util.getImgURL(url);
             String username = "";
 
-            //Get username by email
+            //Get username by email (all variables putting into the session should start by "u")
             CountDownLatch latch22 = new CountDownLatch(1);
             mUserReference = FirebaseDatabase.getInstance().getReference("users");
             ValueEventListener postListener = new ValueEventListener() {
@@ -339,8 +373,8 @@ public class FirstServlet extends HttpServlet {
                             pdfs = user.pdfs;
                             session.setAttribute("pdfs",pdfs);
                             session.setAttribute("user",user);
-                            session.setAttribute("followerNum", user.followers.size());
-                            session.setAttribute("followingNum", user.following.size());
+                            session.setAttribute("ufollowerNum", user.followers.size());
+                            session.setAttribute("ufollowingNum", user.following.size());
                             session.setAttribute("username", user.username);
                             latch2.countDown();
                         }
@@ -371,72 +405,72 @@ public class FirstServlet extends HttpServlet {
             User user = (User) session.getAttribute("user");
             for (Map.Entry<String, PDF> entry : pdfs.entrySet()) {
                 PDF pdf = (PDF) entry.getValue();
-                descriptionMap.put(entry.getKey(),pdf.description);
-                yearMap.put(entry.getKey(), String.valueOf(pdf.year));
-                monthMap.put(entry.getKey(),monthConvert.get(pdf.month));
-                tagMap.put(entry.getKey(),pdf.tag);
-                dayMap.put(entry.getKey(), String.valueOf(pdf.day));
-                urlMap.put(entry.getKey(),pdf.url);
-                nameArray.add(entry.getKey());
+                udescriptionMap.put(entry.getKey(),pdf.description);
+                uyearMap.put(entry.getKey(), String.valueOf(pdf.year));
+                umonthMap.put(entry.getKey(),monthConvert.get(pdf.month));
+                utagMap.put(entry.getKey(),pdf.tag);
+                udayMap.put(entry.getKey(), String.valueOf(pdf.day));
+                uurlMap.put(entry.getKey(),pdf.url);
+                unameArray.add(entry.getKey());
             }
             for (Map.Entry<String, Object> entry : user.followers.entrySet()) {
                 String followerName = String.valueOf(entry.getValue());
-                followerArray.add(followerName);
-                followerUrlArray.add(MD5Util.getImgURL(followerName));
+                ufollowerArray.add(followerName);
+                ufollowerUrlArray.add(MD5Util.getImgURL(followerName));
             }
             for (Map.Entry<String, Object> entry : user.following.entrySet()) {
                 String followingName = String.valueOf(entry.getValue());
-                followingArray.add(followingName);
-                followingUrlArray.add(MD5Util.getImgURL(followingName));
+                ufollowingArray.add(followingName);
+                ufollowingUrlArray.add(MD5Util.getImgURL(followingName));
             }
-            for (Map.Entry<String, String> entry : tagMap.entrySet()) {
+            for (Map.Entry<String, String> entry : utagMap.entrySet()) {
                 String temp = (String) entry.getValue();
                 String tempkey = (String) entry.getKey();
                 if (temp.equals("Mathematics"))
-                    MathArray.add(tempkey);
+                    uMathArray.add(tempkey);
                 if (temp.equals("Computer Science"))
-                    CSArray.add(tempkey);
+                    uCSArray.add(tempkey);
                 if (temp.equals("Art & Music"))
-                    ArtArray.add(tempkey);
+                    uArtArray.add(tempkey);
                 if (temp.equals("Statistical Science"))
-                    StatArray.add(tempkey);
+                    uStatArray.add(tempkey);
                 if (temp.equals("World History"))
-                    HistoryArray.add(tempkey);
+                    uHistoryArray.add(tempkey);
                 if (temp.equals("Physics"))
-                    PhysicsArray.add(tempkey);
+                    uPhysicsArray.add(tempkey);
                 if (temp.equals("Chemistry"))
-                    ChemArray.add(tempkey);
+                    uChemArray.add(tempkey);
                 if (temp.equals("Literature"))
-                    LitArray.add(tempkey);
+                    uLitArray.add(tempkey);
                 if (temp.equals("Business"))
-                    BusArray.add(tempkey);
+                    uBusArray.add(tempkey);
             }
             //Set by session
-            session.setAttribute("shared",nameArray.size());
-            session.setAttribute("descriptionMap",descriptionMap);
-            session.setAttribute("yearMap",yearMap);
-            session.setAttribute("monthMap",monthMap);
-            session.setAttribute("tagMap",tagMap);
-            session.setAttribute("dayMap",dayMap);
-            session.setAttribute("urlMap",urlMap);
+            session.setAttribute("ushared",unameArray.size());
+            session.setAttribute("udescriptionMap",udescriptionMap);
+            session.setAttribute("uyearMap",uyearMap);
+            session.setAttribute("umonthMap",umonthMap);
+            session.setAttribute("utagMap",utagMap);
+            session.setAttribute("udayMap",udayMap);
+            session.setAttribute("uurlMap",uurlMap);
 
             //tag array
-            session.setAttribute("nameArray", nameArray);
-            session.setAttribute("MathArray", MathArray);
-            session.setAttribute("CSArray", CSArray);
-            session.setAttribute("ArtArray", ArtArray);
-            session.setAttribute("LitArray", LitArray);
-            session.setAttribute("BusArray", BusArray);
-            session.setAttribute("StatArray", StatArray);
-            session.setAttribute("HistoryArray", HistoryArray);
-            session.setAttribute("PhysicsArray", PhysicsArray);
-            session.setAttribute("ChemArray", ChemArray);
-            session.setAttribute("followerArray",followerArray);
-            session.setAttribute("followingArray",followingArray);
-            session.setAttribute("followerUrlArray",followerUrlArray);
-            session.setAttribute("followingUrlArray",followingArray);
-            session.setAttribute("image", image);
-            session.setAttribute("email", url);
+            session.setAttribute("unameArray", unameArray);
+            session.setAttribute("uMathArray", uMathArray);
+            session.setAttribute("uCSArray", uCSArray);
+            session.setAttribute("uArtArray", uArtArray);
+            session.setAttribute("uLitArray", uLitArray);
+            session.setAttribute("uBusArray", uBusArray);
+            session.setAttribute("uStatArray", uStatArray);
+            session.setAttribute("uHistoryArray", uHistoryArray);
+            session.setAttribute("uPhysicsArray", uPhysicsArray);
+            session.setAttribute("uChemArray", uChemArray);
+            session.setAttribute("ufollowerArray",ufollowerArray);
+            session.setAttribute("ufollowingArray",ufollowingArray);
+            session.setAttribute("ufollowerUrlArray",ufollowerUrlArray);
+            session.setAttribute("ufollowingUrlArray",ufollowingArray);
+            session.setAttribute("uimage", image);
+            session.setAttribute("uemail", url);
             response.sendRedirect("userProfile.jsp");
         }
         //code for search jump
@@ -603,6 +637,8 @@ public class FirstServlet extends HttpServlet {
             if(session.getAttribute("username") != null) {
                 session.removeAttribute("username");
             }
+            this.state.handle(this);
+            request.removeAttribute("logout");
             response.sendRedirect("index.jsp");
         }
 
@@ -610,13 +646,27 @@ public class FirstServlet extends HttpServlet {
         if(request.getParameter("followme") != null){
             HttpSession session = request.getSession();
             if(session.getAttribute("username") == null) {
+                this.state.handle(this);
+                request.removeAttribute("followme");
                 response.sendRedirect("login.html");
                 return;
             }
             int result = add_follower((String)session.getAttribute("username"),(String)session.getAttribute("SearchedUsername"));
+            //Update data from firebase
+            this.state.handle(this);
+            if(request.getParameter("followme")!=null)
+                request.removeAttribute("followme");
             response.getWriter().print("<script> alert(\"You successfully followed "+(String)session.getAttribute("SearchedUsername")+"!\"); </script>");
             response.sendRedirect("SearchedProfile.jsp");
         }
+
+        //update
+        if(request.getParameter("update") != null){
+            this.state.handle(this);
+            request.removeAttribute("update");
+            response.sendRedirect("index.jsp");
+        }
+
     }
 
     //Function to make the servlet ready to fetch data back fron firebase
@@ -706,7 +756,8 @@ public class FirstServlet extends HttpServlet {
         return 0;
     }
 
-    public boolean FirebaseisReady() {
+    //output status of servlet, whether it is ready to fetch data from firebase
+    boolean FirebaseisReady(){
         return userArraygetted;
     }
 }

@@ -58,11 +58,11 @@
     String ChemSize = "0";
 
     //Get variables
-    if (session.getAttribute("email") == null) {
+    if (session.getAttribute("uemail") == null) {
         response.sendRedirect("index.jsp");
     }
-    else if (session.getAttribute("email") != null) {
-        email = (String) session.getAttribute("email");
+    else if (session.getAttribute("uemail") != null) {
+        email = (String) session.getAttribute("uemail");
         emailName = (String) session.getAttribute("username");
         profileImageUrl = (String) session.getAttribute("uimage");
     }
@@ -145,7 +145,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">NoteHub</a>
+            <a class="navbar-brand" href="Request?update=true">NoteHub</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -168,7 +168,7 @@
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a id = "btnLogout" href="index.jsp?logout=true">logout <i class="fa fa-sign-out"></i></a></li>
+                <li><a id = "btnLogout" href="Request?logout=true">logout <i class="fa fa-sign-out"></i></a></li>
                 <ul id="login-dp" class="dropdown-menu">
                     <li>
                         <div class="row">
@@ -196,8 +196,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-primary btn-block" function="login()"
-                                               onclick="login()" value="Sign in"></input>
+                                        <input type="submit" class="btn btn-primary btn-block" function="login()" onclick="login()" value="Sign in">
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -260,12 +259,36 @@
                             class="">Shares</strong></span> <%=shared%>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Following</strong></span> <a href="follow.html"><%=followingNum%>
-                    </a>
+                            class="">Following</strong></span>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><%=followerNum%>
+                        </a>
+                        <ul id="follow-dp-following" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>user1</p>
+                                        <p>user2</p>
+                                        <p>user3</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong
-                            class="">Followers</strong></span> <a href="follow.html"><%=followerNum%>
-                    </a>
+                            class="">Followers</strong></span>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><%=followerNum%>
+                        </a>
+                        <ul id="follow-dp-follower" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>user1</p>
+                                        <p>user2</p>
+                                        <p>user3</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
