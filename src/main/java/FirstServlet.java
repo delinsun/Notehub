@@ -636,6 +636,7 @@ public class FirstServlet extends HttpServlet {
             HttpSession session = request.getSession();
             if(session.getAttribute("username") != null) {
                 session.removeAttribute("username");
+                session.removeAttribute("uemail");
             }
             this.state.handle(this);
             request.removeAttribute("logout");

@@ -58,7 +58,7 @@
     String ChemSize = "0";
 
     //Get variables
-    if (session.getAttribute("uemail") == null) {
+    if (session.getAttribute("uemail") == null || session.getAttribute("username") == null) {
         response.sendRedirect("index.jsp");
     }
     else if (session.getAttribute("uemail") != null) {
