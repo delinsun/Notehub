@@ -1,8 +1,20 @@
-# Notehub(Website)
+# Notehub
 ------
-### A website for Notehub users to share and collaborate on reading notes.
-![alt text](/web/images/frontPage.png)
-* Users can upload PDF(by using associated Android App, see details in https://github.com/hding1/NoteHub-Android) to our software and easily take notes of a PDF. The PDF file users upload can be any format such as images of notes. We will use api to convert uploaded images into a flat scan file.
-* After saving your notes, notes will be classified to different types of repositories. 
-* Users can search user names by using the search bar on the top of the website and follow other users.
-* Our goal is to let different users easily uploading their hand-written notes online and manage and view notes with convenience.
+### A software users to share and collaborate on reading notes.
+#### Main structure
+![alt text](https://github.com/delinsun/Notehub/blob/master/images/structure.JPG)
+NoteHub is a software that allows users to register and upload notes using smart phone and view it on website. A optimized search engine allows user to search notes uploaded by all users based on username or notes names. It also allow users to add followers. We currently support android and will support ios in the future. <br />
+
+Android-end repository: https://github.com/hding1/NoteHub-Android
+
+#### Setup
+Cerate Java Web using Tomcate and test the website at http://localhost:8080/notehub/
+
+#### Gateway
+![alt text](https://github.com/delinsun/Notehub/blob/master/images/Gateway.png)
+
+#### User Profile Page
+![alt text](https://github.com/delinsun/Notehub/blob/master/images/profilePage2.png)
+
+#### Searching uploaded notes
+![alt text](https://github.com/delinsun/Notehub/blob/master/images/pdfList.png)
